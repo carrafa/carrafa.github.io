@@ -396,21 +396,31 @@ html {
 #tech {
   padding-top: 2em;
   background-color: deepskyblue; }
+  #tech h3 {
+    position: relative;
+    z-index: 150; }
   #tech ul {
     position: relative;
     display: inline-block;
     width: 100%;
     vertical-align: top;
     z-index: 150; }
+  #tech .technologies-header {
+    -webkit-animation: ship 7s ease;
+    -moz-animation: ship 7s ease;
+    animation: ship 7s ease; }
   #tech ul.technologies li {
-    color: deepskyblue; }
+    color: deepskyblue;
+    font-weight: 300; }
   #tech .ship-container {
     position: absolute;
-    margin-top: -14em;
+    margin-top: -16em;
     margin-left: 40%;
-    -webkit-animation: ship 1s ease;
-    -moz-animation: ship 1s ease;
-    animation: ship 1s ease; }
+    width: 40em;
+    z-index: 110;
+    -webkit-animation: ship 7s ease;
+    -moz-animation: ship 7s ease;
+    animation: ship 7s ease; }
 
 @-webkit-keyframes ship {
   0% {
@@ -429,19 +439,32 @@ html {
     left: 120%; }
   100% {
     left: 0%; } }
-    #tech .ship-container .bow {
+    #tech .ship-container .tip-of-ship {
       position: absolute;
-      z-index: 110;
+      top: 0;
+      left: -2em;
       height: 0;
       width: 0;
-      border-top: 18em solid whitesmoke;
-      border-left: 18em solid transparent; }
+      border-top: 2em solid darkred;
+      border-left: 2em solid transparent; }
+    #tech .ship-container .top-of-ship {
+      height: 2em;
+      width: 100%;
+      background-color: darkred; }
+      #tech .ship-container .top-of-ship h3 {
+        padding-top: .5em;
+        text-align: right; }
+    #tech .ship-container .bow {
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-top: 15em solid whitesmoke;
+      border-left: 15em solid transparent; }
     #tech .ship-container .ship {
       position: absolute;
-      z-index: 110;
-      height: 18em;
-      left: 18em;
-      width: 120vh;
+      height: 15em;
+      left: 15em;
+      width: 100%;
       background-color: whitesmoke; }
     #tech .ship-container .anchor-container {
       font-size: 2em;

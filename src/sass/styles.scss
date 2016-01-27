@@ -273,6 +273,10 @@ footer.mobile{
 #tech {
   padding-top: 2em;
   background-color: $light-blue;
+  h3{
+    position: relative;
+    z-index: 150;
+  }
   ul{
     position: relative;
     display: inline-block;
@@ -280,15 +284,21 @@ footer.mobile{
     vertical-align: top;
     z-index: 150;
   }
+  .technologies-header{
+    @include animation(ship 7.0s ease);
+  }
   ul.technologies{
     li{
       color: $light-blue;
+      font-weight: 300;
     }
   }
   .ship-container{
     position: absolute;
-    margin-top: -14em;
+    margin-top: -16em;
     margin-left: 40%;
+    width: 40em;
+    z-index: 110;
     @include keyframes(ship) {
       0%{
         left: 120%;
@@ -297,18 +307,31 @@ footer.mobile{
         left: 0%;
       }
     }
-    @include animation(ship 1.0s ease);
+    @include animation(ship 7.0s ease);
+    .tip-of-ship{
+      position: absolute;
+      top: 0;
+      left: -2em;
+      @include triangle(2em, $dark-red, up-right);
+    }
+    .top-of-ship{
+      height: 2em;
+      width: 100%;
+      background-color: $dark-red;
+      h3{
+        padding-top: .5em;
+        text-align: right;
+      }
+    }
     .bow{
       position: absolute;
-      z-index: 110;
-      @include triangle(18em, whitesmoke, up-right)
+      @include triangle(15em, whitesmoke, up-right)
     }
     .ship{
       position: absolute;
-      z-index: 110;
-      height: 18em;
-      left: 18em;
-      width: 120vh;
+      height: 15em;
+      left: 15em;
+      width: 100%;
       background-color: whitesmoke;
     }
     .anchor-container{
