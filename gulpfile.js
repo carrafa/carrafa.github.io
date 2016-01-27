@@ -11,7 +11,7 @@ var paths = {
 };
 
 gulp.task('webserver', function() {
-  gulp.src('./dist/')
+  gulp.src('./')
     .pipe(webserver({
       livereload: true,
       fallback: 'index.html'
@@ -23,7 +23,7 @@ gulp.task('sass', function() {
     .pipe(sass({
       includePaths: ['styles'].concat(neat)
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css/'));
+    .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('sass-main', function() {
@@ -31,7 +31,7 @@ gulp.task('sass-main', function() {
     .pipe(sass({
       includePaths: ['styles'].concat(neat)
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css/'));
+    .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('jade', function() {
@@ -39,7 +39,7 @@ gulp.task('jade', function() {
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./'))
 });
 
 gulp.task('scripts', function() {
@@ -47,7 +47,7 @@ gulp.task('scripts', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(minify())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('./js'))
 });
 
 
