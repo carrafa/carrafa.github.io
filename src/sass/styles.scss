@@ -256,11 +256,21 @@ footer.mobile{
     margin-left: 1em;
   }
 
+  @include keyframes(projects) {
+    0%{
+      margin-top: -10em;
+    }
+    100% {
+      margin-top: -.5em;
+    }
+  }
+
   li{
+    @include animation(projects 0.5s ease-in);
     margin-top: .5em;
   }
   li:first-child{
-    margin-top: 0;
+    // margin-top: 0;
   }
 }
 

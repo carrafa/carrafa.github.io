@@ -271,10 +271,29 @@ footer.mobile {
   .projects summary {
     font-weight: 300;
     margin-left: 1em; }
+
+@-webkit-keyframes projects {
+  0% {
+    margin-top: -10em; }
+  100% {
+    margin-top: -.5em; } }
+
+@-moz-keyframes projects {
+  0% {
+    margin-top: -10em; }
+  100% {
+    margin-top: -.5em; } }
+
+@keyframes projects {
+  0% {
+    margin-top: -10em; }
+  100% {
+    margin-top: -.5em; } }
   .projects li {
+    -webkit-animation: projects 0.5s ease-in;
+    -moz-animation: projects 0.5s ease-in;
+    animation: projects 0.5s ease-in;
     margin-top: .5em; }
-  .projects li:first-child {
-    margin-top: 0; }
 
 html {
   box-sizing: border-box; }
@@ -344,7 +363,7 @@ html {
   animation: fish 8s ease;
   margin-left: -10%;
   margin-right: 1em;
-  position: relative;
+  position: absolute;
   display: inline-block;
   height: 3em;
   width: 3em; }
@@ -352,24 +371,24 @@ html {
 @-webkit-keyframes fish {
   0% {
     left: 120%; }
-  95% {
-    left: -10%; }
+  50% {
+    left: 40%; }
   100% {
     left: -200%; } }
 
 @-moz-keyframes fish {
   0% {
     left: 120%; }
-  95% {
-    left: -10%; }
+  50% {
+    left: 40%; }
   100% {
     left: -200%; } }
 
 @keyframes fish {
   0% {
     left: 120%; }
-  95% {
-    left: -10%; }
+  50% {
+    left: 40%; }
   100% {
     left: -200%; } }
   .fish-container .body {
