@@ -1,0 +1,28 @@
+{
+  "name": "carrafa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bourbon": "^4.2.6",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1",
+    "neat": "^1.2.2",
+    "node-sass": "^3.4.2"
+  },
+  "devDependencies": {
+    "bourbon": "^4.2.6",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify": "0.0.5",
+    "gulp-sass": "^2.1.1",
+    "gulp-webserver": "^0.9.1",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2"
+  }
+}

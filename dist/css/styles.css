@@ -1,0 +1,498 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@-webkit-keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2); } }
+
+@-moz-keyframes scale {
+  0%, 100% {
+    -moz-transform: scale(1); }
+  50% {
+    -moz-transform: scale(2); } }
+
+@keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2); } }
+
+@-webkit-keyframes fadeIn {
+  0%, 100% {
+    -webkit-transform: opacity(0); }
+  50% {
+    -webkit-transform: opacity(1); } }
+
+@-moz-keyframes fadeIn {
+  0%, 100% {
+    -moz-transform: opacity(0); }
+  50% {
+    -moz-transform: opacity(1); } }
+
+@keyframes fadeIn {
+  0%, 100% {
+    -webkit-transform: opacity(0);
+    -moz-transform: opacity(0);
+    -ms-transform: opacity(0);
+    -o-transform: opacity(0);
+    transform: opacity(0); }
+  50% {
+    -webkit-transform: opacity(1);
+    -moz-transform: opacity(1);
+    -ms-transform: opacity(1);
+    -o-transform: opacity(1);
+    transform: opacity(1); } }
+
+body {
+  background-color: dodgerblue;
+  background-image: -webkit-linear-gradient(dodgerblue, black);
+  background-image: linear-gradient(dodgerblue, black);
+  font-size: 2em;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  color: cornsilk;
+  height: 100vh;
+  width: 100vw; }
+  @media screen and (max-width: 650px) {
+    body {
+      background-image: url("/images/josh.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%; } }
+
+h1, h2, h3, h4, h5, h6 {
+  color: goldenrod;
+  margin: 0;
+  font-weight: bold; }
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: gold;
+  -webkit-transition: color 0.4s ease-in-out;
+  -moz-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out; }
+
+a:hover {
+  color: goldenrod; }
+
+i {
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  transition: color 0.4s ease; }
+
+i:hover {
+  color: goldenrod; }
+
+@media screen and (max-width: 650px) {
+  li {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em; } }
+
+.left-container {
+  display: inline-block;
+  vertical-align: top;
+  height: 20em;
+  width: 45%;
+  margin-left: 5%; }
+
+.right-container {
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  height: 20em;
+  width: 45%; }
+
+header {
+  position: fixed;
+  height: 2.3em;
+  width: 100%;
+  padding-top: 2em;
+  background-color: gold;
+  background-size: 2.5em;
+  z-index: 1000; }
+  @media screen and (max-width: 650px) {
+    header {
+      background-image: none; } }
+  header img {
+    position: absolute;
+    top: .3em;
+    left: .3em;
+    width: 3em; }
+    @media screen and (max-width: 650px) {
+      header img {
+        display: none; } }
+  header .name {
+    position: absolute;
+    display: inline-block;
+    top: .3em;
+    left: 4em;
+    -webkit-animation: header 1s ease;
+    -moz-animation: header 1s ease;
+    animation: header 1s ease; }
+
+@-webkit-keyframes header {
+  0% {
+    top: -1em; }
+  100% {
+    top: .3em; } }
+
+@-moz-keyframes header {
+  0% {
+    top: -1em; }
+  100% {
+    top: .3em; } }
+
+@keyframes header {
+  0% {
+    top: -1em; }
+  100% {
+    top: .3em; } }
+    header .name * {
+      display: inline-block; }
+    header .name a:hover {
+      color: snow; }
+    header .name h1 a {
+      color: goldenrod; }
+    header .name h1:hover {
+      color: cornsilk; }
+    header .name h1 {
+      margin-left: .1em;
+      margin-right: .1em; }
+      @media screen and (max-width: 1065px) {
+        header .name h1 {
+          margin: 0; } }
+    @media screen and (max-width: 1065px) {
+      header .name * {
+        text-align: center; } }
+  header header::after {
+    display: block;
+    height: 2.3em;
+    width: 100%;
+    background-color: orange; }
+  header .contact {
+    position: relative;
+    display: inline-block;
+    margin-left: 4em;
+    width: 13.5em;
+    text-align: left;
+    font-weight: 300;
+    margin-top: .2em; }
+    header .contact a {
+      color: snow; }
+    header .contact a:hover {
+      color: dimgray; }
+    header .contact li {
+      display: inline-block;
+      margin-left: .7em; }
+  header nav {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    display: inline-block; }
+    header nav a {
+      color: snow; }
+    header nav li {
+      display: inline-block;
+      margin-right: .5em; }
+    header nav li:last-child {
+      margin-right: 0; }
+
+@media screen and (max-width: 650px) {
+  header.web {
+    display: none; } }
+
+header.mobile {
+  display: none;
+  background-color: goldenrod;
+  height: 1.3em;
+  text-align: left; }
+  @media screen and (max-width: 650px) {
+    header.mobile {
+      display: block;
+      padding: .2em; }
+      header.mobile a {
+        color: cornsilk; }
+      header.mobile a img {
+        height: 1em; } }
+
+footer.mobile {
+  position: fixed;
+  display: none;
+  padding: .2em;
+  padding-left: .5em;
+  padding-right: .5em;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: deepskyblue;
+  opacity: 0.9; }
+  @media screen and (max-width: 650px) {
+    footer.mobile {
+      display: block; } }
+  footer.mobile a:first-child {
+    position: absolute;
+    left: .5em; }
+  footer.mobile a:last-child {
+    position: absolute;
+    right: .5em; }
+
+.main-container {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  padding-top: 2.3em; }
+
+.container {
+  display: block;
+  height: 150vh;
+  width: 100vw; }
+
+.projects {
+  padding-top: .5em; }
+  .projects summary {
+    font-weight: 300;
+    margin-left: 1em; }
+  .projects li {
+    margin-top: .5em; }
+  .projects li:first-child {
+    margin-top: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@-webkit-keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2); } }
+
+@-moz-keyframes scale {
+  0%, 100% {
+    -moz-transform: scale(1); }
+  50% {
+    -moz-transform: scale(2); } }
+
+@keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2); } }
+
+@-webkit-keyframes fadeIn {
+  0%, 100% {
+    -webkit-transform: opacity(0); }
+  50% {
+    -webkit-transform: opacity(1); } }
+
+@-moz-keyframes fadeIn {
+  0%, 100% {
+    -moz-transform: opacity(0); }
+  50% {
+    -moz-transform: opacity(1); } }
+
+@keyframes fadeIn {
+  0%, 100% {
+    -webkit-transform: opacity(0);
+    -moz-transform: opacity(0);
+    -ms-transform: opacity(0);
+    -o-transform: opacity(0);
+    transform: opacity(0); }
+  50% {
+    -webkit-transform: opacity(1);
+    -moz-transform: opacity(1);
+    -ms-transform: opacity(1);
+    -o-transform: opacity(1);
+    transform: opacity(1); } }
+
+.acquarium {
+  width: 100%;
+  position: relative; }
+
+.fish-container {
+  -webkit-animation: fish 8s ease;
+  -moz-animation: fish 8s ease;
+  animation: fish 8s ease;
+  margin-left: -10%;
+  margin-right: 1em;
+  position: relative;
+  display: inline-block;
+  height: 3em;
+  width: 3em; }
+
+@-webkit-keyframes fish {
+  0% {
+    left: 120%; }
+  95% {
+    left: -10%; }
+  100% {
+    left: -200%; } }
+
+@-moz-keyframes fish {
+  0% {
+    left: 120%; }
+  95% {
+    left: -10%; }
+  100% {
+    left: -200%; } }
+
+@keyframes fish {
+  0% {
+    left: 120%; }
+  95% {
+    left: -10%; }
+  100% {
+    left: -200%; } }
+  .fish-container .body {
+    height: 100%;
+    border-radius: 50%;
+    background-color: orange;
+    box-shadow: inset -2px -4px 5px black; }
+    .fish-container .body .eye {
+      position: absolute;
+      border-radius: 50%;
+      top: 1em;
+      left: .4em;
+      height: .4em;
+      width: .4em;
+      background-color: #000064; }
+  .fish-container .tail {
+    position: absolute;
+    right: -1em;
+    top: 0;
+    border-top: 1.5em solid transparent;
+    border-right: 1.5em solid orange;
+    border-bottom: 1.5em solid transparent; }
+
+#tech {
+  padding-top: 2em;
+  background-color: deepskyblue; }
+  #tech ul {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    z-index: 150; }
+  #tech ul.technologies li {
+    color: deepskyblue; }
+  #tech .ship-container {
+    position: absolute;
+    margin-top: -14em;
+    margin-left: 40%;
+    -webkit-animation: ship 1s ease;
+    -moz-animation: ship 1s ease;
+    animation: ship 1s ease; }
+
+@-webkit-keyframes ship {
+  0% {
+    left: 120%; }
+  100% {
+    left: 0%; } }
+
+@-moz-keyframes ship {
+  0% {
+    left: 120%; }
+  100% {
+    left: 0%; } }
+
+@keyframes ship {
+  0% {
+    left: 120%; }
+  100% {
+    left: 0%; } }
+    #tech .ship-container .bow {
+      position: absolute;
+      z-index: 110;
+      height: 0;
+      width: 0;
+      border-top: 18em solid whitesmoke;
+      border-left: 18em solid transparent; }
+    #tech .ship-container .ship {
+      position: absolute;
+      z-index: 110;
+      height: 18em;
+      left: 18em;
+      width: 120vh;
+      background-color: whitesmoke; }
+    #tech .ship-container .anchor-container {
+      font-size: 2em;
+      color: darkgray; }
+  #tech .ocean-surface {
+    display: block;
+    width: 100%;
+    height: 200vh;
+    z-index: 150;
+    background-color: dodgerblue;
+    margin-top: -20vh; }
+
+#music {
+  background-color: dodgerblue; }
+
+#design {
+  background-color: darkblue;
+  background-color: dodgerblue;
+  background-image: -webkit-linear-gradient(dodgerblue, darkblue);
+  background-image: linear-gradient(dodgerblue, darkblue); }
+
+#ocean {
+  height: 400vh;
+  background-color: darkblue;
+  background-image: -webkit-linear-gradient(darkblue, black);
+  background-image: linear-gradient(darkblue, black); }
+
+.audio-container {
+  display: block; }
+
+.audioplayer {
+  position: relative;
+  width: 10em; }
+  .audioplayer * {
+    display: inline-block; }
+  .audioplayer .timeline-container {
+    position: relative;
+    width: 4em;
+    height: 1em; }
+  .audioplayer .timeline {
+    width: 110%;
+    height: .2em;
+    border-radius: .1em;
+    vertical-align: middle;
+    background-color: darkgray; }
+  .audioplayer .playhead {
+    position: absolute;
+    height: .7em;
+    width: .2em;
+    border-radius: .1em;
+    top: .2em;
+    left: 1%;
+    background-color: goldenrod;
+    vertical-align: top; }

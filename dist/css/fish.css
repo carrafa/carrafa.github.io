@@ -1,0 +1,116 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@-webkit-keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2); } }
+
+@-moz-keyframes scale {
+  0%, 100% {
+    -moz-transform: scale(1); }
+  50% {
+    -moz-transform: scale(2); } }
+
+@keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2); } }
+
+@-webkit-keyframes fadeIn {
+  0%, 100% {
+    -webkit-transform: opacity(0); }
+  50% {
+    -webkit-transform: opacity(1); } }
+
+@-moz-keyframes fadeIn {
+  0%, 100% {
+    -moz-transform: opacity(0); }
+  50% {
+    -moz-transform: opacity(1); } }
+
+@keyframes fadeIn {
+  0%, 100% {
+    -webkit-transform: opacity(0);
+    -moz-transform: opacity(0);
+    -ms-transform: opacity(0);
+    -o-transform: opacity(0);
+    transform: opacity(0); }
+  50% {
+    -webkit-transform: opacity(1);
+    -moz-transform: opacity(1);
+    -ms-transform: opacity(1);
+    -o-transform: opacity(1);
+    transform: opacity(1); } }
+
+.acquarium {
+  width: 100%;
+  position: relative; }
+
+.fish-container {
+  -webkit-animation: fish 8s ease;
+  -moz-animation: fish 8s ease;
+  animation: fish 8s ease;
+  margin-left: -10%;
+  margin-right: 1em;
+  position: relative;
+  display: inline-block;
+  height: 3em;
+  width: 3em; }
+
+@-webkit-keyframes fish {
+  0% {
+    left: 120%; }
+  95% {
+    left: -10%; }
+  100% {
+    left: -200%; } }
+
+@-moz-keyframes fish {
+  0% {
+    left: 120%; }
+  95% {
+    left: -10%; }
+  100% {
+    left: -200%; } }
+
+@keyframes fish {
+  0% {
+    left: 120%; }
+  95% {
+    left: -10%; }
+  100% {
+    left: -200%; } }
+  .fish-container .body {
+    height: 100%;
+    border-radius: 50%;
+    background-color: orange;
+    box-shadow: inset -2px -4px 5px black; }
+    .fish-container .body .eye {
+      position: absolute;
+      border-radius: 50%;
+      top: 1em;
+      left: .4em;
+      height: .4em;
+      width: .4em;
+      background-color: #000064; }
+  .fish-container .tail {
+    position: absolute;
+    right: -1em;
+    top: 0;
+    border-top: 1.5em solid transparent;
+    border-right: 1.5em solid orange;
+    border-bottom: 1.5em solid transparent; }
