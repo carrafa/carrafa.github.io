@@ -174,7 +174,7 @@ header {
       margin-left: .7em; }
   header nav {
     position: absolute;
-    top: .5em;
+    top: .7em;
     right: .5em;
     display: inline-block; }
     header nav a {
@@ -508,14 +508,32 @@ html {
     height: 520px;
     background-color: goldenrod;
     border-radius: 20px;
-    text-align: left;
     padding: 25px; }
-  #music .om {
-    display: block; }
-  #music .poc {
-    display: none; }
-  #music .nexf {
-    display: none; }
+  #music .accordion-tabs {
+    padding: 0; }
+    #music .accordion-tabs::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #music .accordion-tabs .tab-header-and-content {
+      list-style: none; }
+      @media screen and (min-width: 50em) {
+        #music .accordion-tabs .tab-header-and-content {
+          display: inline; } }
+    #music .accordion-tabs .tab-link {
+      display: block;
+      padding-right: 1em; }
+      @media screen and (min-width: 50em) {
+        #music .accordion-tabs .tab-link {
+          display: inline-block; } }
+    #music .accordion-tabs .is-active {
+      color: #ff0000; }
+    #music .accordion-tabs .tab-content {
+      display: none;
+      width: 100%; }
+      @media screen and (min-width: 50em) {
+        #music .accordion-tabs .tab-content {
+          float: left; } }
 
 #design {
   background-color: darkblue;

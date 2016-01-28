@@ -170,7 +170,7 @@ header{
 
   nav{
     position: absolute;
-    top: .5em;
+    top: .7em;
     right: .5em;
     display:inline-block;
     a{
@@ -414,20 +414,56 @@ footer.mobile{
     height: 520px;
     background-color: $dark-yellow;
     border-radius: 20px;
-    text-align: left;
     padding: 25px;
   }
 
   .om{
-    display: block;
+
   }
 
   .poc{
-    display: none;
+
   }
 
   .nexf{
-    display: none;
+
+  }
+
+  .accordion-tabs {
+    $large-screen: 50em !default;
+
+    @include clearfix;
+    padding: 0;
+
+    .tab-header-and-content {
+      list-style: none;
+
+      @include media($large-screen) {
+        display: inline;
+      }
+    }
+
+    .tab-link {
+      display: block;
+      padding-right: 1em;
+
+      @include media($large-screen) {
+        display: inline-block;
+      }
+    }
+
+    .is-active {
+      color: #ff0000;
+    }
+
+    .tab-content {
+      display: none;
+      width: 100%;
+
+      @include media($large-screen) {
+        float: left;
+      }
+    }
   }
 
 

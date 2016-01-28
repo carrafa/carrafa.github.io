@@ -49,7 +49,7 @@ function scrollListener() {
   });
 }
 
-// ------------- scrolly links --------------
+// ------------- scroll thing --------------
 
 (function(jQuery) {
   jQuery.mark = {
@@ -68,7 +68,7 @@ function scrollListener() {
         var thespeed = 1000;
         var offset = jQuery(target).offset().top;
         jQuery('html,body').animate({
-          scrollTop: offset - 120
+          scrollTop: offset - 140
         }, thespeed, 'swing');
         e.preventDefault();
       });
