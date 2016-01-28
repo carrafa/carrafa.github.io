@@ -4,58 +4,6 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-@-webkit-keyframes scale {
-  0%, 100% {
-    -webkit-transform: scale(1); }
-  50% {
-    -webkit-transform: scale(2); } }
-
-@-moz-keyframes scale {
-  0%, 100% {
-    -moz-transform: scale(1); }
-  50% {
-    -moz-transform: scale(2); } }
-
-@keyframes scale {
-  0%, 100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
-  50% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    transform: scale(2); } }
-
-@-webkit-keyframes fadeIn {
-  0%, 100% {
-    -webkit-transform: opacity(0); }
-  50% {
-    -webkit-transform: opacity(1); } }
-
-@-moz-keyframes fadeIn {
-  0%, 100% {
-    -moz-transform: opacity(0); }
-  50% {
-    -moz-transform: opacity(1); } }
-
-@keyframes fadeIn {
-  0%, 100% {
-    -webkit-transform: opacity(0);
-    -moz-transform: opacity(0);
-    -ms-transform: opacity(0);
-    -o-transform: opacity(0);
-    transform: opacity(0); }
-  50% {
-    -webkit-transform: opacity(1);
-    -moz-transform: opacity(1);
-    -ms-transform: opacity(1);
-    -o-transform: opacity(1);
-    transform: opacity(1); } }
-
 body {
   background-color: dodgerblue;
   background-image: -webkit-linear-gradient(dodgerblue, black);
@@ -195,7 +143,28 @@ header {
     width: 13.5em;
     text-align: left;
     font-weight: 300;
-    margin-top: .2em; }
+    margin-top: .2em;
+    -webkit-animation: fadeIn 3s ease;
+    -moz-animation: fadeIn 3s ease;
+    animation: fadeIn 3s ease; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
     header .contact a {
       color: snow; }
     header .contact a:hover {
@@ -215,6 +184,28 @@ header {
       margin-right: .5em; }
     header nav li:last-child {
       margin-right: 0; }
+
+@media screen and (min-width: 50em) {
+  .scroll-on-page aside {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .scroll-on-page aside:last-child {
+      margin-right: 0; } }
+
+.scroll-on-page .scroll-on-page-link {
+  display: block;
+  outline: none; }
+
+@media screen and (min-width: 50em) {
+  .scroll-on-page article {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .scroll-on-page article:last-child {
+      margin-right: 0; } }
 
 @media screen and (max-width: 650px) {
   header.web {
@@ -270,30 +261,52 @@ footer.mobile {
   padding-top: .5em; }
   .projects summary {
     font-weight: 300;
-    margin-left: 1em; }
+    margin-left: 1em;
+    -webkit-animation: projectSummary 4s ease-in;
+    -moz-animation: projectSummary 4s ease-in;
+    animation: projectSummary 4s ease-in; }
 
-@-webkit-keyframes projects {
-  0% {
-    margin-top: -10em; }
-  100% {
-    margin-top: -.5em; } }
+@-webkit-keyframes projectSummary {
+  from {
+    margin-left: -40em; }
+  to {
+    margin-left: 1em; } }
 
-@-moz-keyframes projects {
-  0% {
-    margin-top: -10em; }
-  100% {
-    margin-top: -.5em; } }
+@-moz-keyframes projectSummary {
+  from {
+    margin-left: -40em; }
+  to {
+    margin-left: 1em; } }
 
-@keyframes projects {
-  0% {
-    margin-top: -10em; }
-  100% {
-    margin-top: -.5em; } }
+@keyframes projectSummary {
+  from {
+    margin-left: -40em; }
+  to {
+    margin-left: 1em; } }
   .projects li {
-    -webkit-animation: projects 0.5s ease-in;
-    -moz-animation: projects 0.5s ease-in;
-    animation: projects 0.5s ease-in;
     margin-top: .5em; }
+    .projects li a {
+      -webkit-animation: projectLink 1s ease-out;
+      -moz-animation: projectLink 1s ease-out;
+      animation: projectLink 1s ease-out; }
+
+@-webkit-keyframes projectLink {
+  0% {
+    margin-left: -20em; }
+  100% {
+    margin-left: -.5em; } }
+
+@-moz-keyframes projectLink {
+  0% {
+    margin-left: -20em; }
+  100% {
+    margin-left: -.5em; } }
+
+@keyframes projectLink {
+  0% {
+    margin-left: -20em; }
+  100% {
+    margin-left: -.5em; } }
 
 html {
   box-sizing: border-box; }
@@ -301,102 +314,23 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-@-webkit-keyframes scale {
-  0%, 100% {
-    -webkit-transform: scale(1); }
-  50% {
-    -webkit-transform: scale(2); } }
-
-@-moz-keyframes scale {
-  0%, 100% {
-    -moz-transform: scale(1); }
-  50% {
-    -moz-transform: scale(2); } }
-
-@keyframes scale {
-  0%, 100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
-  50% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    transform: scale(2); } }
-
-@-webkit-keyframes fadeIn {
-  0%, 100% {
-    -webkit-transform: opacity(0); }
-  50% {
-    -webkit-transform: opacity(1); } }
-
-@-moz-keyframes fadeIn {
-  0%, 100% {
-    -moz-transform: opacity(0); }
-  50% {
-    -moz-transform: opacity(1); } }
-
-@keyframes fadeIn {
-  0%, 100% {
-    -webkit-transform: opacity(0);
-    -moz-transform: opacity(0);
-    -ms-transform: opacity(0);
-    -o-transform: opacity(0);
-    transform: opacity(0); }
-  50% {
-    -webkit-transform: opacity(1);
-    -moz-transform: opacity(1);
-    -ms-transform: opacity(1);
-    -o-transform: opacity(1);
-    transform: opacity(1); } }
-
 .acquarium {
   width: 100%;
   position: relative; }
 
 .fish-container {
-  -webkit-animation: fish 8s ease;
-  -moz-animation: fish 8s ease;
-  animation: fish 8s ease;
   margin-left: -10%;
   margin-right: 1em;
   position: absolute;
   display: inline-block;
   height: 3em;
   width: 3em; }
-
-@-webkit-keyframes fish {
-  0% {
-    left: 120%; }
-  50% {
-    left: 40%; }
-  100% {
-    left: -200%; } }
-
-@-moz-keyframes fish {
-  0% {
-    left: 120%; }
-  50% {
-    left: 40%; }
-  100% {
-    left: -200%; } }
-
-@keyframes fish {
-  0% {
-    left: 120%; }
-  50% {
-    left: 40%; }
-  100% {
-    left: -200%; } }
   .fish-container .body {
     height: 100%;
     border-radius: 50%;
     background-color: orange;
     box-shadow: inset -2px -4px 5px black; }
-    .fish-container .body .eye {
+    .fish-container .body .eyeRtoL {
       position: absolute;
       border-radius: 50%;
       top: 1em;
@@ -404,13 +338,84 @@ html {
       height: .4em;
       width: .4em;
       background-color: #000064; }
-  .fish-container .tail {
+    .fish-container .body .eyeLtoR {
+      position: absolute;
+      border-radius: 50%;
+      top: 1em;
+      left: 2.6em;
+      height: .4em;
+      width: .4em;
+      background-color: #000064; }
+  .fish-container .tailRtoL {
     position: absolute;
     right: -1em;
     top: 0;
     border-top: 1.5em solid transparent;
     border-right: 1.5em solid orange;
     border-bottom: 1.5em solid transparent; }
+  .fish-container .tailLtoR {
+    position: absolute;
+    right: -1em;
+    top: 0;
+    border-top: 1.5em solid transparent;
+    border-left: 1.5em solid orange;
+    border-bottom: 1.5em solid transparent; }
+  .fish-container .RtoL {
+    -webkit-animation: fishRtoL 8s ease;
+    -moz-animation: fishRtoL 8s ease;
+    animation: fishRtoL 8s ease; }
+
+@-webkit-keyframes fishRtoL {
+  0% {
+    left: 120%; }
+  50% {
+    left: 40%; }
+  100% {
+    left: -200%; } }
+
+@-moz-keyframes fishRtoL {
+  0% {
+    left: 120%; }
+  50% {
+    left: 40%; }
+  100% {
+    left: -200%; } }
+
+@keyframes fishRtoL {
+  0% {
+    left: 120%; }
+  50% {
+    left: 40%; }
+  100% {
+    left: -200%; } }
+    .fish-container .RtoL .LtoR {
+      -webkit-animation: fishLtoR 8s ease;
+      -moz-animation: fishLtoR 8s ease;
+      animation: fishLtoR 8s ease; }
+
+@-webkit-keyframes fishLtoR {
+  0% {
+    left: 200%; }
+  50% {
+    left: 70%; }
+  100% {
+    left: -120%; } }
+
+@-moz-keyframes fishLtoR {
+  0% {
+    left: 200%; }
+  50% {
+    left: 70%; }
+  100% {
+    left: -120%; } }
+
+@keyframes fishLtoR {
+  0% {
+    left: 200%; }
+  50% {
+    left: 70%; }
+  100% {
+    left: -120%; } }
 
 #tech {
   padding-top: 2em;
@@ -498,6 +503,19 @@ html {
 
 #music {
   background-color: dodgerblue; }
+  #music .bandcamp-widget {
+    width: 400px;
+    height: 520px;
+    background-color: goldenrod;
+    border-radius: 20px;
+    text-align: left;
+    padding: 25px; }
+  #music .om {
+    display: block; }
+  #music .poc {
+    display: none; }
+  #music .nexf {
+    display: none; }
 
 #design {
   background-color: darkblue;

@@ -7,12 +7,13 @@
       zoomSpeed: 0.02,
       imageSource: 'images/batmanify.png',
       topOffset: 0,
+      link: null
     }, options);
 
     this.click(function(e) {
       e.preventDefault();
       $('html').css('cursor', 'none');
-      var link = this.href;
+      var link = settings.link || this.href;
       batmanifyRotate(settings.rotationSpeed, settings.zoomSpeed, link);
     });
 

@@ -36,7 +36,8 @@ function makeAFish() {
 function batmanify(el, image, offset) {
   el.batmanify({
     imageSource: image,
-    topOffset: offset
+    topOffset: offset,
+    link: 'http://carrafa.github.io'
   });
 }
 
@@ -47,3 +48,5 @@ function scrollListener() {
     console.log('meow');
   });
 }
+
+// ------------- bandcamp listeners --------------

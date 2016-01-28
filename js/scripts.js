@@ -36,7 +36,8 @@ function makeAFish() {
 function batmanify(el, image, offset) {
   el.batmanify({
     imageSource: image,
-    topOffset: offset
+    topOffset: offset,
+    link: 'http://carrafa.github.io'
   });
 }
 
@@ -47,3 +48,35 @@ function scrollListener() {
     console.log('meow');
   });
 }
+
+// ------------- scrolly links --------------
+
+(function(jQuery) {
+  jQuery.mark = {
+    jump: function(options) {
+      var defaults = {
+        selector: 'a.scroll-on-page-link'
+      };
+      if (typeof options == 'string') {
+        defaults.selector = options;
+      }
+
+      options = jQuery.extend(defaults, options);
+      return jQuery(options.selector).click(function(e) {
+        var jumpobj = jQuery(this);
+        var target = jumpobj.attr('href');
+        var thespeed = 1000;
+        var offset = jQuery(target).offset().top;
+        jQuery('html,body').animate({
+          scrollTop: offset - 120
+        }, thespeed, 'swing');
+        e.preventDefault();
+      });
+    }
+  };
+})(jQuery);
+
+
+jQuery(function() {
+  jQuery.mark.jump();
+});

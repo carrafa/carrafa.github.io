@@ -147,6 +147,15 @@ header{
     text-align: left;
     font-weight: 300;
     margin-top: .2em;
+    @include keyframes(fadeIn) {
+      0%{
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @include animation(fadeIn 3.0s ease);
     a{
       color:$alt-link-color;
     }
@@ -173,6 +182,30 @@ header{
     }
     li:last-child{
       margin-right: 0;
+    }
+  }
+}
+
+
+//  -------------------------- scrolll nav stuff --------------------------
+
+.scroll-on-page {
+  $large-screen: 50em !default;
+
+  aside {
+    @include media($large-screen) {
+      @include span-columns(4);
+    }
+  }
+
+  .scroll-on-page-link {
+    display: block;
+    outline: none;
+  }
+
+  article {
+    @include media($large-screen) {
+      @include span-columns(8);
     }
   }
 }
@@ -254,23 +287,32 @@ footer.mobile{
   summary{
     font-weight: 300;
     margin-left: 1em;
-  }
-
-  @include keyframes(projects) {
-    0%{
-      margin-top: -10em;
+    @include keyframes(projectSummary) {
+      from {
+        margin-left: -40em;
+      }
+      to {
+        margin-left: 1em;
+      }
     }
-    100% {
-      margin-top: -.5em;
-    }
+    @include animation(projectSummary 4.0s ease-in);
   }
 
   li{
-    @include animation(projects 0.5s ease-in);
     margin-top: .5em;
-  }
-  li:first-child{
-    // margin-top: 0;
+
+    a{
+      @include keyframes(projectLink) {
+        0%{
+          margin-left: -20em;
+        }
+        100% {
+          margin-left: -.5em;
+        }
+      }
+      @include animation(projectLink 1.0s ease-out);
+
+    }
   }
 }
 
@@ -303,6 +345,7 @@ footer.mobile{
       font-weight: 300;
     }
   }
+
   .ship-container{
     position: absolute;
     margin-top: -16em;
@@ -365,6 +408,28 @@ footer.mobile{
 #music{
   background-color: $blue;
   // @include linear-gradient($light-blue, $blue);
+
+  .bandcamp-widget{
+    width: 400px;
+    height: 520px;
+    background-color: $dark-yellow;
+    border-radius: 20px;
+    text-align: left;
+    padding: 25px;
+  }
+
+  .om{
+    display: block;
+  }
+
+  .poc{
+    display: none;
+  }
+
+  .nexf{
+    display: none;
+  }
+
 
 }
 
