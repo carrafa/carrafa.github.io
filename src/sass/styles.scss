@@ -8,6 +8,7 @@ body{
   color: $font-color;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   @include media($mobile){
     background-image: url('/images/josh.png');
     background-repeat: no-repeat;
@@ -350,7 +351,7 @@ footer.mobile{
     position: absolute;
     margin-top: -16em;
     margin-left: 40%;
-    width: 40em;
+    width: 100%;
     z-index: 110;
     @include keyframes(ship) {
       0%{

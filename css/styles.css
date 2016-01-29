@@ -13,7 +13,8 @@ body {
   font-weight: 600;
   color: cornsilk;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  overflow-x: hidden; }
   @media screen and (max-width: 650px) {
     body {
       background-image: url("/images/josh.png");
@@ -440,7 +441,7 @@ html {
     position: absolute;
     margin-top: -16em;
     margin-left: 40%;
-    width: 40em;
+    width: 100%;
     z-index: 110;
     -webkit-animation: ship 7s ease;
     -moz-animation: ship 7s ease;
