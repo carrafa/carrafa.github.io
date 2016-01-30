@@ -5,9 +5,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: dodgerblue;
-  background-image: -webkit-linear-gradient(dodgerblue, black);
-  background-image: linear-gradient(dodgerblue, black);
+  background-color: deepskyblue;
   font-size: 2em;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
@@ -17,10 +15,7 @@ body {
   overflow-x: hidden; }
   @media screen and (max-width: 650px) {
     body {
-      background-image: url("/images/josh.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 80%; } }
+      font-size: 1.5em; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: goldenrod;
@@ -62,6 +57,9 @@ i:hover {
   height: 20em;
   width: 45%;
   margin-left: 5%; }
+  @media screen and (max-width: 650px) {
+    .left-container {
+      width: 90%; } }
 
 .right-container {
   display: inline-block;
@@ -69,6 +67,9 @@ i:hover {
   text-align: right;
   height: 20em;
   width: 45%; }
+  @media screen and (max-width: 650px) {
+    .right-container {
+      width: 90%; } }
 
 header {
   position: fixed;
@@ -94,6 +95,7 @@ header {
     display: inline-block;
     top: .3em;
     left: 4em;
+    z-index: 1000;
     -webkit-animation: header 1s ease;
     -moz-animation: header 1s ease;
     animation: header 1s ease; }
@@ -132,11 +134,6 @@ header {
     @media screen and (max-width: 1065px) {
       header .name * {
         text-align: center; } }
-  header header::after {
-    display: block;
-    height: 2.3em;
-    width: 100%;
-    background-color: orange; }
   header .contact {
     position: relative;
     display: inline-block;
@@ -177,7 +174,8 @@ header {
     position: absolute;
     top: .7em;
     right: .5em;
-    display: inline-block; }
+    display: inline-block;
+    z-index: 900; }
     header nav a {
       color: snow; }
     header nav li {
@@ -214,17 +212,37 @@ header {
 
 header.mobile {
   display: none;
-  background-color: goldenrod;
   height: 1.3em;
   text-align: left; }
   @media screen and (max-width: 650px) {
     header.mobile {
       display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
       padding: .2em; }
       header.mobile a {
-        color: cornsilk; }
+        color: cornsilk;
+        height: 1em;
+        width: 1em; }
       header.mobile a img {
-        height: 1em; } }
+        height: 1em;
+        width: 1em;
+        z-index: 10000;
+        position: absolute;
+        top: 0;
+        left: 0; } }
+
+.subheader.mobile {
+  display: none; }
+  @media screen and (max-width: 650px) {
+    .subheader.mobile {
+      display: block;
+      margin: 0;
+      font-size: .5em;
+      text-align: center; }
+      .subheader.mobile p {
+        margin: 0; } }
 
 footer.mobile {
   position: fixed;
@@ -252,6 +270,9 @@ footer.mobile {
   display: block;
   width: 100vw;
   padding-top: 2.3em; }
+  @media screen and (max-width: 650px) {
+    .main-container {
+      padding-top: 1.3em; } }
 
 .container {
   display: block;
@@ -332,6 +353,11 @@ footer.mobile {
     -webkit-animation-delay: 0s;
     -moz-animation-delay: 0s;
     animation-delay: 0s; }
+  @media screen and (max-width: 650px) {
+    .projects li a {
+      font-size: 1.6em; }
+    .projects summary {
+      font-size: 0.4em; } }
 
 html {
   box-sizing: border-box; }
@@ -525,6 +551,9 @@ html {
     z-index: 150;
     background-color: dodgerblue;
     margin-top: -20vh; }
+  @media screen and (max-width: 650px) {
+    #tech {
+      padding-top: 0; } }
 
 #music {
   background-color: dodgerblue; }

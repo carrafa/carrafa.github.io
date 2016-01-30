@@ -1,7 +1,8 @@
 @import 'variables';
 
 body{
-  @include linear-gradient($blue, black);
+  // @include linear-gradient($light-blue, black);
+  background-color: $light-blue;
   font-size: 2em;
   font-family: $main-font;
   font-weight: 600;
@@ -10,10 +11,7 @@ body{
   width: 100vw;
   overflow-x: hidden;
   @include media($mobile){
-    background-image: url('/images/josh.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 80%;
+    font-size: 1.5em;
   }
 }
 
@@ -60,6 +58,9 @@ li{
   height: 20em;
   width: 45%;
   margin-left: 5%;
+  @include media($mobile){
+    width: 90%;
+  }
 }
 
 .right-container{
@@ -68,6 +69,9 @@ li{
   text-align: right;
   height: 20em;
   width: 45%;
+  @include media($mobile){
+    width: 90%;
+  }
 }
 
 // -------------- header! -------------- //
@@ -98,6 +102,7 @@ header{
     display: inline-block;
     top: .3em;
     left: 4em;
+    z-index: 1000;
     @include keyframes(header) {
       0%{
         top: -1em;
@@ -131,13 +136,6 @@ header{
         text-align: center;
       }
     }
-  }
-
-  header::after{
-    display: block;
-    height: 2.3em;
-    width: 100%;
-    background-color: orange;
   }
 
   .contact{
@@ -174,6 +172,7 @@ header{
     top: .7em;
     right: .5em;
     display:inline-block;
+    z-index: 900;
     a{
       color: $alt-link-color;
     }
@@ -221,18 +220,40 @@ header.web{
 
 header.mobile{
   display: none;
-  background-color: $dark-yellow;
   height: 1.3em;
   text-align: left;
 
   @include media($mobile){
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: .2em;
     a{
       color: $font-color;
+      height: 1em;
+      width: 1em;
     }
     a img{
       height: 1em;
+      width: 1em;
+      z-index: 10000;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.subheader.mobile{
+  display: none;
+  @include media($mobile){
+    display: block;
+    margin: 0;
+    font-size: .5em;
+    text-align: center;
+    p{
+      margin: 0;
     }
   }
 }
@@ -272,7 +293,9 @@ footer.mobile{
   display: block;
   width: 100vw;
   padding-top: 2.3em;
-  // @include outer-container;
+  @include media($mobile){
+    padding-top: 1.3em;
+  }
 }
 
 .container{
@@ -331,6 +354,14 @@ footer.mobile{
   li:nth-child(5) summary{
     margin-left: -40;
     @include animation-delay(0.0s);
+  }
+  @include media($mobile){
+    li a{
+      font-size: 1.6em;
+    }
+    summary{
+      font-size: 0.4em;
+    }
   }
 }
 
@@ -417,6 +448,9 @@ footer.mobile{
     z-index: 150;
     background-color: $blue;
     margin-top: -20vh;
+  }
+  @include media($mobile){
+    padding-top: 0;
   }
 }
 
