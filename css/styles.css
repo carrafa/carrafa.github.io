@@ -308,6 +308,30 @@ footer.mobile {
     margin-left: -20em; }
   100% {
     margin-left: -.5em; } }
+  .projects li:nth-child(1) summary {
+    -webkit-animation-delay: -0.8s;
+    -moz-animation-delay: -0.8s;
+    animation-delay: -0.8s; }
+  .projects li:nth-child(2) summary {
+    margin-left: -40;
+    -webkit-animation-delay: -0.6s;
+    -moz-animation-delay: -0.6s;
+    animation-delay: -0.6s; }
+  .projects li:nth-child(3) summary {
+    margin-left: -40;
+    -webkit-animation-delay: -0.4s;
+    -moz-animation-delay: -0.4s;
+    animation-delay: -0.4s; }
+  .projects li:nth-child(4) summary {
+    margin-left: -40;
+    -webkit-animation-delay: -0.2s;
+    -moz-animation-delay: -0.2s;
+    animation-delay: -0.2s; }
+  .projects li:nth-child(5) summary {
+    margin-left: -40;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    animation-delay: 0s; }
 
 html {
   box-sizing: border-box; }
