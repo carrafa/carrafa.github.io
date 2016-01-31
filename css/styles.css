@@ -15,7 +15,19 @@ body {
   overflow-x: hidden; }
   @media screen and (max-width: 650px) {
     body {
-      font-size: 1.5em; } }
+      font-size: 1.5em; }
+      body .right-container {
+        width: 100%; }
+      body ul {
+        padding-top: 0; }
+      body li {
+        text-align: center;
+        width: 100%;
+        margin-top: .2em; }
+        body li a {
+          width: 100%; }
+      body h3 {
+        text-align: center; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: goldenrod;
@@ -370,7 +382,7 @@ html {
   position: relative; }
 
 .fish-container {
-  margin-left: -10%;
+  margin-left: -20%;
   margin-right: 1em;
   position: absolute;
   display: inline-block;
@@ -553,7 +565,11 @@ html {
     margin-top: -20vh; }
   @media screen and (max-width: 650px) {
     #tech {
-      padding-top: 0; } }
+      padding: 0; }
+      #tech .ship-container {
+        display: none; }
+      #tech .right-container {
+        display: none; } }
 
 #music {
   background-color: dodgerblue; }
@@ -594,6 +610,9 @@ html {
   background-color: dodgerblue;
   background-image: -webkit-linear-gradient(dodgerblue, darkblue);
   background-image: linear-gradient(dodgerblue, darkblue); }
+  @media screen and (max-width: 650px) {
+    #design {
+      padding-top: 20em; } }
 
 #ocean {
   height: 400vh;

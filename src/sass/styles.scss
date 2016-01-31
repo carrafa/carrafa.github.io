@@ -12,6 +12,23 @@ body{
   overflow-x: hidden;
   @include media($mobile){
     font-size: 1.5em;
+    .right-container{
+      width: 100%;
+    }
+    ul{
+      padding-top: 0;
+    }
+    li{
+      text-align: center;
+      width: 100%;
+      margin-top: .2em;
+      a{
+        width: 100%;
+      }
+    }
+    h3{
+      text-align: center;
+    }
   }
 }
 
@@ -449,8 +466,15 @@ footer.mobile{
     background-color: $blue;
     margin-top: -20vh;
   }
+
   @include media($mobile){
-    padding-top: 0;
+    padding: 0;
+    .ship-container{
+      display: none;
+    }
+    .right-container{
+      display: none;
+    }
   }
 }
 
@@ -526,6 +550,9 @@ footer.mobile{
 #design{
   background-color: $dark-blue;
   @include linear-gradient($blue, $dark-blue);
+  @include media($mobile){
+    padding-top: 20em;
+  }
 }
 
 // -------------------------------------- ocean -------------------------------------- //
