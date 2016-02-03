@@ -32,6 +32,27 @@ body{
   }
 }
 
+
+.hook{
+  @include keyframes(hookdrop){
+    0%{
+      bottom: 200%;
+    }
+    85%{
+      bottom: 100%;
+    }
+    90%{
+      bottom: 55%;
+    }
+  }
+  position: fixed;
+  z-index: 900;
+  width: 100%;
+  bottom: 60%;
+  left: 50%;
+  @include animation(hookdrop 7.0s ease);
+}
+
 h1, h2, h3, h4, h5, h6{
   color: $dark-yellow;
   margin: 0;
