@@ -4,6 +4,7 @@ $(function() {
   scrollListener();
   batmanify($('.profile-pic'), '../images/josh.png', '-50%');
   fishTimer();
+  startFishKiller();
 });
 
 // ------------- fish colors -------------
@@ -78,16 +79,27 @@ function makeAFishLtoR() {
 
 // fish top range: -19em to 165em
 
-// ------------- fish timer -------------
+// ------------- fish timers -------------
 
 function fishTimer() {
   window.setInterval(function() {
-    console.log('fish');
     makeAFishRtoL();
     makeAFishLtoR();
   }, 500);
 }
 
+function startFishKiller() {
+  window.setTimeout(function() {
+    fishKiller();
+  }, 5000);
+}
+
+function fishKiller() {
+  window.setInterval(function() {
+    $('.acquarium').children().first().remove();
+    console.log('removed?');
+  }, 250);
+}
 
 
 // ------------- batmanify logo -------------
