@@ -4,6 +4,7 @@ $(function() {
   scrollListener();
   batmanify($('.profile-pic'), '../images/josh.png', '-50%');
   fishListener();
+  fishTimer();
 });
 
 function fishListener() {
@@ -12,26 +13,57 @@ function fishListener() {
   });
 }
 
-function makeAFish() {
+function makeAFishRtoL() {
   $body = $('<div>').addClass('body');
-  $eye = $('<div>').addClass('eye');
-  $tail = $('<div>').addClass('tail');
-  $fishContainer = $('<div>').addClass('fish-container');
+  $eye = $('<div>').addClass('eyeRtoL');
+  $tail = $('<div>').addClass('tailRtoL');
+  $fishContainer = $('<div>').addClass('fish-container right-to-left');
 
   var topOffset = Math.floor(Math.random() * 184) - 19;
 
   $fishContainer.css({
     top: topOffset + "em"
   });
+
   $body.append($eye);
   $fishContainer.append($body);
   $fishContainer.append($tail);
-
   $('.acquarium').append($fishContainer);
+}
 
+function makeAFishLtoR() {
+  $body = $('<div>').addClass('body');
+  $eye = $('<div>').addClass('eyeLtoR');
+  $tail = $('<div>').addClass('tailLtoR');
+  $fishContainer = $('<div>').addClass('fish-container left-to-right');
+
+  var topOffset = Math.floor(Math.random() * 184) - 19;
+
+  $fishContainer.css({
+    top: topOffset + "em"
+  });
+
+  $body.append($eye);
+  $fishContainer.append($body);
+  $fishContainer.append($tail);
+  $('.acquarium').append($fishContainer);
 }
 
 // fish top range: -19em to 165em
+
+// ------------- fish timer -------------
+
+function fishTimer() {
+  window.setInterval(function() {
+    console.log('fish');
+    makeAFishRtoL();
+    makeAFishLtoR();
+  }, 500);
+}
+
+
+
+// ------------- batmanify logo -------------
 
 function batmanify(el, image, offset) {
   el.batmanify({
@@ -42,14 +74,23 @@ function batmanify(el, image, offset) {
 }
 
 
+// ------------- fish hook thing -------------
 
 function scrollListener() {
-  $('window').scroll(function() {
-    console.log('meow');
+  $(window).scroll(function() {
+    var scrollTop = $(window).scrollTop();
+    var docHeight = $(document).height();
+    var windowHeight = $(window).height();
+    var height = Math.floor(scrollTop) + windowHeight;
+    var bottom = (docHeight / height * 10);
+    $('.hook').css({
+      bottom: bottom + "%"
+    });
   });
 }
 
-// ------------- scroll thing --------------
+
+// ------------- scroll nav thing --------------
 
 (function(jQuery) {
   jQuery.mark = {
