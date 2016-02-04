@@ -411,7 +411,7 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-5.acquarium {
+.acquarium {
   width: 100%;
   position: relative; }
 
@@ -439,7 +439,7 @@ html {
       position: absolute;
       border-radius: 50%;
       top: 1em;
-      left: 2.6em;
+      left: 2em;
       height: .4em;
       width: .4em;
       background-color: #000064; }
@@ -452,7 +452,7 @@ html {
     border-bottom: 1.5em solid transparent; }
   .fish-container .tailLtoR {
     position: absolute;
-    right: -1em;
+    left: -1.2em;
     top: 0;
     border-top: 1.5em solid transparent;
     border-left: 1.5em solid orange;
