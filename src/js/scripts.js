@@ -3,15 +3,22 @@ console.log('hi, nosy person.');
 $(function() {
   scrollListener();
   batmanify($('.profile-pic'), '../images/josh.png', '-50%');
-  fishListener();
   fishTimer();
 });
 
-function fishListener() {
-  $('body').click(function() {
-    makeAFish();
-  });
+// ------------- fish colors -------------
+
+var fishColors = ['coral', 'aquamarine', 'violet', 'hotpink', 'crimson',
+  'palegoldenrod', 'lime', 'powderblue', 'gold', 'honeydew', 'lightseagreen',
+  'peachpuff', 'rebeccapurple', 'seagreen', 'orchid', 'tomato', 'seashell',
+  'salmon'
+];
+
+function getColor() {
+  return fishColors[Math.floor(Math.random() * fishColors.length)];
 }
+
+// ------------- fish makers -------------
 
 function makeAFishRtoL() {
   $body = $('<div>').addClass('body');
@@ -20,6 +27,16 @@ function makeAFishRtoL() {
   $fishContainer = $('<div>').addClass('fish-container right-to-left');
 
   var topOffset = Math.floor(Math.random() * 184) - 19;
+
+  var color = getColor();
+
+  $body.css({
+    'background-color': color
+  });
+
+  $tail.css({
+    "border-right": "1.5em solid " + color
+  });
 
   $fishContainer.css({
     top: topOffset + "em"
@@ -38,6 +55,16 @@ function makeAFishLtoR() {
   $fishContainer = $('<div>').addClass('fish-container left-to-right');
 
   var topOffset = Math.floor(Math.random() * 184) - 19;
+
+  var color = getColor();
+
+  $body.css({
+    'background-color': color
+  });
+
+  $tail.css({
+    "border-left": "1.5em solid " + color
+  });
 
   $fishContainer.css({
     top: topOffset + "em"
