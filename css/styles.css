@@ -33,7 +33,7 @@ body {
   position: absolute;
   z-index: 900;
   width: 100%;
-  bottom: 86%;
+  top: -1100px;
   left: 50%;
   -webkit-animation: hookdrop 7s ease;
   -moz-animation: hookdrop 7s ease;
@@ -41,27 +41,21 @@ body {
 
 @-webkit-keyframes hookdrop {
   0% {
-    bottom: 200%; }
-  85% {
-    bottom: 100%; }
-  90% {
-    bottom: 75%; } }
+    top: -4000px; }
+  80% {
+    top: -1500px; } }
 
 @-moz-keyframes hookdrop {
   0% {
-    bottom: 200%; }
-  85% {
-    bottom: 100%; }
-  90% {
-    bottom: 75%; } }
+    top: -4000px; }
+  80% {
+    top: -1500px; } }
 
 @keyframes hookdrop {
   0% {
-    bottom: 200%; }
-  85% {
-    bottom: 100%; }
-  90% {
-    bottom: 75%; } }
+    top: -4000px; }
+  80% {
+    top: -1500px; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: goldenrod;
@@ -130,7 +124,7 @@ header {
   padding-top: 2em;
   background-color: gold;
   background-size: 2.5em;
-  z-index: 1000; }
+  z-index: 1200; }
   @media screen and (max-width: 650px) {
     header {
       background-image: none; } }
@@ -330,6 +324,29 @@ footer.mobile {
   display: block;
   height: 150vh;
   width: 100vw; }
+
+.ship-text {
+  opacity: .8;
+  position: absolute;
+  bottom: 0; }
+  .ship-text .technologies-container {
+    display: block; }
+    .ship-text .technologies-container * {
+      display: block;
+      width: 10em; }
+    .ship-text .technologies-container .technologies {
+      color: deepskyblue;
+      font-weight: 300; }
+  .ship-text .fish-counter-container {
+    display: block; }
+    .ship-text .fish-counter-container * {
+      display: inline-block; }
+    .ship-text .fish-counter-container .fish-counter {
+      color: deepskyblue;
+      font-weight: 300; }
+
+.projects-header {
+  color: firebrick; }
 
 .projects {
   padding-top: .5em; }
@@ -611,20 +628,17 @@ html {
   background-color: deepskyblue; }
   #tech h3 {
     position: relative;
-    z-index: 150; }
+    z-index: 1100; }
   #tech ul {
     position: relative;
     display: inline-block;
     width: 100%;
     vertical-align: top;
-    z-index: 150; }
+    z-index: 1100; }
   #tech .technologies-header {
     -webkit-animation: ship 7s ease;
     -moz-animation: ship 7s ease;
     animation: ship 7s ease; }
-  #tech ul.technologies li {
-    color: deepskyblue;
-    font-weight: 300; }
   #tech .ship-container {
     position: absolute;
     margin-top: -16em;

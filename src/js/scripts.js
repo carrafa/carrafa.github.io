@@ -51,11 +51,8 @@ function makeAFishRtoL() {
   setTimeout(function() {
     hookDepth = Math.floor(hookDepth);
     if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
-      console.log('caught!');
-      $fishContainer.remove();
+      $fishContainer.css('display', 'none');
       makeAFishCaught(color);
-    } else {
-      console.log('not caught : (');
     }
   }, 1000);
 
@@ -92,12 +89,9 @@ function makeAFishLtoR() {
   setTimeout(function() {
     hookDepth = Math.floor(hookDepth);
     if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
-      console.log('caught!');
       $fishContainer.remove();
       makeAFishCaught(color);
-    } else {
-      console.log('not caught : (');
-    }
+    } else {}
   }, 1000);
 
   $body.append($eye);
@@ -125,7 +119,7 @@ function makeAFishCaught(color) {
   $fishContainer.append($tail);
   $('.hook').append($fishContainer);
   fishCounter++;
-  $('.fish-counter').text(fishCaught);
+  $('.fish-counter').text(fishCounter);
 };
 
 // fish top range: -19em to 165em

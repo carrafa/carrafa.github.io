@@ -34,21 +34,19 @@ body{
 
 
 .hook{
+
   @include keyframes(hookdrop){
     0%{
-      bottom: 200%;
+      top: -4000px;
     }
-    85%{
-      bottom: 100%;
-    }
-    90%{
-      bottom: 75%;
+    80%{
+      top: -1500px
     }
   }
   position: absolute;
   z-index: 900;
   width: 100%;
-  bottom: 86%;
+  top: -1100px;
   left: 50%;
   @include animation(hookdrop 7.0s ease);
 }
@@ -129,7 +127,7 @@ header{
   padding-top: 2em;
   background-color: $yellow;
   background-size: 2.5em;
-  z-index: 1000;
+  z-index: 1200;
   @include media($mobile){
     background-image: none;
   }
@@ -350,8 +348,43 @@ footer.mobile{
   width: 100vw;
 }
 
+// -------------------------------- ship text stuff -------------------------------- //
+.ship-text {
+  opacity: .8;
+  position: absolute;
+  bottom: 0;
+  .technologies-container{
+    display: block;
+    *{
+      display: block;
+      width: 10em;
+    }
+    .technologies{
+      color: $light-blue;
+      font-weight: 300;
+    }
+  }
+  .fish-counter-container {
+    display: block;
+    *{
+      display: inline-block;
+    }
+    .fish-counter{
+      color: $light-blue;
+      font-weight: 300;
+    }
+  }
+
+}
+
+
+
+
 // -------------------------------- project lists -------------------------------- //
 
+.projects-header{
+  color: firebrick;
+}
 .projects{
   padding-top: .5em;
   summary{
@@ -422,23 +455,17 @@ footer.mobile{
   background-color: $light-blue;
   h3{
     position: relative;
-    z-index: 150;
+    z-index: 1100;
   }
   ul{
     position: relative;
     display: inline-block;
     width: 100%;
     vertical-align: top;
-    z-index: 150;
+    z-index: 1100;
   }
   .technologies-header{
     @include animation(ship 7.0s ease);
-  }
-  ul.technologies{
-    li{
-      color: $light-blue;
-      font-weight: 300;
-    }
   }
 
   .ship-container{
