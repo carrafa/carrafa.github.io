@@ -404,6 +404,8 @@ footer.mobile{
     margin-top: .5em;
 
     a{
+      position: relative;
+      z-index: 1100;
       @include keyframes(projectLink) {
         0%{
           margin-left: -20em;
@@ -462,7 +464,6 @@ footer.mobile{
     display: inline-block;
     width: 100%;
     vertical-align: top;
-    z-index: 1100;
   }
   .technologies-header{
     @include animation(ship 7.0s ease);

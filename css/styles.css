@@ -377,6 +377,8 @@ footer.mobile {
   .projects li {
     margin-top: .5em; }
     .projects li a {
+      position: relative;
+      z-index: 1100;
       -webkit-animation: projectLink 1s ease-out;
       -moz-animation: projectLink 1s ease-out;
       animation: projectLink 1s ease-out; }
@@ -633,8 +635,7 @@ html {
     position: relative;
     display: inline-block;
     width: 100%;
-    vertical-align: top;
-    z-index: 1100; }
+    vertical-align: top; }
   #tech .technologies-header {
     -webkit-animation: ship 7s ease;
     -moz-animation: ship 7s ease;
