@@ -1,7 +1,7 @@
 console.log('hi, nosy person.');
 
 $(function() {
-  scrollListener();
+  hookListener();
   batmanify($('.profile-pic'), '../images/josh.png', '-50%');
   fishTimer();
   startFishKiller();
@@ -15,6 +15,9 @@ var fishColors = ['coral', 'aquamarine', 'violet', 'hotpink', 'crimson',
   'salmon'
 ];
 
+var hookDepth = -100;
+var fishCounter = 0;
+
 function getColor() {
   return fishColors[Math.floor(Math.random() * fishColors.length)];
 }
@@ -27,7 +30,8 @@ function makeAFishRtoL() {
   $tail = $('<div>').addClass('tailRtoL');
   $fishContainer = $('<div>').addClass('fish-container right-to-left');
 
-  var topOffset = Math.floor(Math.random() * 184) - 19;
+  var oceanDepth = $(document).height() - $('#tech').height();
+  var topOffset = Math.floor(Math.random() * oceanDepth);
 
   var color = getColor();
 
@@ -35,19 +39,31 @@ function makeAFishRtoL() {
     'background-color': color
   });
 
+
   $tail.css({
     "border-right": "1.5em solid " + color
   });
 
   $fishContainer.css({
-    top: topOffset + "em"
+    top: topOffset + "px"
   });
+
+  setTimeout(function() {
+    hookDepth = Math.floor(hookDepth);
+    if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
+      console.log('caught!');
+      $fishContainer.remove();
+      makeAFishCaught(color);
+    } else {
+      console.log('not caught : (');
+    }
+  }, 1000);
 
   $body.append($eye);
   $fishContainer.append($body);
   $fishContainer.append($tail);
   $('.acquarium').append($fishContainer);
-}
+};
 
 function makeAFishLtoR() {
   $body = $('<div>').addClass('body');
@@ -55,7 +71,9 @@ function makeAFishLtoR() {
   $tail = $('<div>').addClass('tailLtoR');
   $fishContainer = $('<div>').addClass('fish-container left-to-right');
 
-  var topOffset = Math.floor(Math.random() * 184) - 19;
+  var oceanDepth = $(document).height() - $('#tech').height()
+  var topOffset = Math.floor(Math.random() * oceanDepth);
+
 
   var color = getColor();
 
@@ -68,14 +86,47 @@ function makeAFishLtoR() {
   });
 
   $fishContainer.css({
-    top: topOffset + "em"
+    top: topOffset + "px"
   });
+
+  setTimeout(function() {
+    hookDepth = Math.floor(hookDepth);
+    if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
+      console.log('caught!');
+      $fishContainer.remove();
+      makeAFishCaught(color);
+    } else {
+      console.log('not caught : (');
+    }
+  }, 1000);
 
   $body.append($eye);
   $fishContainer.append($body);
   $fishContainer.append($tail);
   $('.acquarium').append($fishContainer);
 }
+
+function makeAFishCaught(color) {
+  $body = $('<div>').addClass('body');
+  $eye = $('<div>').addClass('eyeCaught');
+  $tail = $('<div>').addClass('tailCaught');
+  $fishContainer = $('<div>').addClass('fish-container fish-caught');
+
+  $body.css({
+    'background-color': color
+  });
+
+  $tail.css({
+    "border-bottom": "1.5em solid " + color
+  });
+
+  $body.append($eye);
+  $fishContainer.append($body);
+  $fishContainer.append($tail);
+  $('.hook').append($fishContainer);
+  fishCounter++;
+  $('.fish-counter').text(fishCaught);
+};
 
 // fish top range: -19em to 165em
 
@@ -97,7 +148,6 @@ function startFishKiller() {
 function fishKiller() {
   window.setInterval(function() {
     $('.acquarium').children().first().remove();
-    console.log('removed?');
   }, 250);
 }
 
@@ -115,15 +165,17 @@ function batmanify(el, image, offset) {
 
 // ------------- fish hook thing -------------
 
-function scrollListener() {
+function hookListener() {
   $(window).scroll(function() {
-    var scrollTop = $(window).scrollTop();
+    var oceanDepth = $(document).height() - $('#tech').height()
+    var scrollTop = $(window).scrollTop() - 1000;
     var docHeight = $(document).height();
-    var windowHeight = $(window).height();
-    var height = Math.floor(scrollTop) + windowHeight;
-    var bottom = (docHeight / height * 10);
+    var offsetPercentage = (scrollTop * 1.3) / docHeight;
+    var topOffset = (oceanDepth * offsetPercentage);
+    hookDepth = topOffset;
+
     $('.hook').css({
-      bottom: bottom + "%"
+      top: topOffset + "px"
     });
   });
 }

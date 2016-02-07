@@ -2,7 +2,7 @@
 
 body{
   // @include linear-gradient($light-blue, black);
-  background-color: $light-blue;
+  background-color: black;
   font-size: 2em;
   font-family: $main-font;
   font-weight: 600;
@@ -45,7 +45,7 @@ body{
       bottom: 75%;
     }
   }
-  position: fixed;
+  position: absolute;
   z-index: 900;
   width: 100%;
   bottom: 86%;
@@ -110,6 +110,13 @@ li{
   @include media($mobile){
     width: 90%;
   }
+}
+
+.bio{
+  position: relative;
+  z-index: 150;
+  color: $light-blue;
+  font-weight: 300;
 }
 
 // -------------- header! -------------- //
@@ -506,65 +513,6 @@ footer.mobile{
 #music{
   background-color: $blue;
   // @include linear-gradient($light-blue, $blue);
-
-  .bandcamp-widget{
-    width: 400px;
-    height: 520px;
-    background-color: $dark-yellow;
-    border-radius: 20px;
-    padding: 25px;
-  }
-
-  .om{
-
-  }
-
-  .poc{
-
-  }
-
-  .nexf{
-
-  }
-
-  .accordion-tabs {
-    $large-screen: 50em !default;
-
-    @include clearfix;
-    padding: 0;
-
-    .tab-header-and-content {
-      list-style: none;
-
-      @include media($large-screen) {
-        display: inline;
-      }
-    }
-
-    .tab-link {
-      display: block;
-      padding-right: 1em;
-
-      @include media($large-screen) {
-        display: inline-block;
-      }
-    }
-
-    .is-active {
-      color: #ff0000;
-    }
-
-    .tab-content {
-      display: none;
-      width: 100%;
-
-      @include media($large-screen) {
-        float: left;
-      }
-    }
-  }
-
-
 }
 
 // -------------------------------------- design -------------------------------------- //
@@ -582,44 +530,4 @@ footer.mobile{
 #ocean{
   height: 400vh;
   @include linear-gradient($dark-blue, black);
-}
-
-// ----------------------------------- audio player ----------------------------------- //
-
-.audio-container{
-  display: block;
-}
-
-.audioplayer{
-  position: relative;
-  width: 10em;
-
-  *{
-    display: inline-block;
-  }
-
-  .timeline-container{
-    position: relative;
-    width: 4em;
-    height: 1em;
-  }
-  .timeline{
-    width: 110%;
-    height: .2em;
-    border-radius: .1em;
-    vertical-align: middle;
-    background-color: darkgray;
-  }
-
-  .playhead{
-    position: absolute;
-    height: .7em;
-    width: .2em;
-    border-radius: .1em;
-    top: .2em;
-    left: 1%;
-    background-color: $dark-yellow;
-    vertical-align: top;
-  }
-
 }

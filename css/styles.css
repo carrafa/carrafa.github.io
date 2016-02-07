@@ -5,7 +5,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: deepskyblue;
+  background-color: black;
   font-size: 2em;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
@@ -30,7 +30,7 @@ body {
         text-align: center; } }
 
 .hook {
-  position: fixed;
+  position: absolute;
   z-index: 900;
   width: 100%;
   bottom: 86%;
@@ -116,6 +116,12 @@ i:hover {
   @media screen and (max-width: 650px) {
     .right-container {
       width: 90%; } }
+
+.bio {
+  position: relative;
+  z-index: 150;
+  color: deepskyblue;
+  font-weight: 300; }
 
 header {
   position: fixed;
@@ -443,6 +449,14 @@ html {
       height: .4em;
       width: .4em;
       background-color: #000064; }
+    .fish-container .body .eyeCaught {
+      position: absolute;
+      border-radius: 50%;
+      top: .8em;
+      left: 2em;
+      height: .4em;
+      width: .4em;
+      background-color: #000064; }
   .fish-container .tailRtoL {
     position: absolute;
     right: -1em;
@@ -457,17 +471,27 @@ html {
     border-top: 1.5em solid transparent;
     border-left: 1.5em solid orange;
     border-bottom: 1.5em solid transparent; }
+  .fish-container .tailCaught {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    bottom: -1.2em;
+    border-right: 1.5em solid transparent;
+    border-left: 1.5em solid transparent;
+    border-bottom: 1.5em solid orange; }
 
 .right-to-left {
   left: -200%;
-  -webkit-animation: fishrtol 5s ease;
-  -moz-animation: fishrtol 5s ease;
-  animation: fishrtol 5s ease; }
+  -webkit-animation: fishrtol 2s ease;
+  -moz-animation: fishrtol 2s ease;
+  animation: fishrtol 2s ease; }
 
 @-webkit-keyframes fishrtol {
   0% {
     left: 120%; }
-  50% {
+  25% {
+    left: 80%; }
+  75% {
     left: 20%; }
   100% {
     left: -200%; } }
@@ -475,7 +499,9 @@ html {
 @-moz-keyframes fishrtol {
   0% {
     left: 120%; }
-  50% {
+  25% {
+    left: 80%; }
+  75% {
     left: 20%; }
   100% {
     left: -200%; } }
@@ -483,52 +509,102 @@ html {
 @keyframes fishrtol {
   0% {
     left: 120%; }
-  50% {
+  25% {
+    left: 80%; }
+  75% {
     left: 20%; }
   100% {
     left: -200%; } }
 
 .left-to-right {
   left: 200%;
-  -webkit-animation: fishltor 5s ease;
-  -moz-animation: fishltor 5s ease;
-  animation: fishltor 5s ease; }
+  -webkit-animation: fishltor 2s ease;
+  -moz-animation: fishltor 2s ease;
+  animation: fishltor 2s ease; }
 
 @-webkit-keyframes fishltor {
   0% {
     left: -120%; }
-  50% {
-    left: 70%; }
+  25% {
+    left: 20%; }
+  75% {
+    left: 80%; }
   100% {
     left: 200%; } }
 
 @-moz-keyframes fishltor {
   0% {
     left: -120%; }
-  50% {
-    left: 70%; }
+  25% {
+    left: 20%; }
+  75% {
+    left: 80%; }
   100% {
     left: 200%; } }
 
 @keyframes fishltor {
   0% {
     left: -120%; }
-  50% {
-    left: 70%; }
+  25% {
+    left: 20%; }
+  75% {
+    left: 80%; }
   100% {
     left: 200%; } }
 
-.angler-fish-container {
-  height: 5em;
-  width: 5em;
-  border-radius: 50%;
-  opacity: .6;
+.fish-caught {
   position: absolute;
-  bottom: 0;
-  left: 48%;
-  background-color: yellow;
-  background-image: -webkit-radial-gradient(yellow, black);
-  background-image: radial-gradient(  yellow, black); }
+  top: 1333px;
+  left: -40px;
+  -webkit-animation: caught 2s linear 5;
+  -moz-animation: caught 2s linear 5;
+  animation: caught 2s linear 5; }
+
+@-webkit-keyframes caught {
+  20% {
+    -webkit-transform: rotate(-10deg); }
+  30% {
+    -webkit-transform: rotate(-12deg); }
+  70% {
+    -webkit-transform: rotate(10deg); }
+  80% {
+    -webkit-transform: rotate(12deg); } }
+
+@-moz-keyframes caught {
+  20% {
+    -moz-transform: rotate(-10deg); }
+  30% {
+    -moz-transform: rotate(-12deg); }
+  70% {
+    -moz-transform: rotate(10deg); }
+  80% {
+    -moz-transform: rotate(12deg); } }
+
+@keyframes caught {
+  20% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  30% {
+    -webkit-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    -o-transform: rotate(-12deg);
+    transform: rotate(-12deg); }
+  70% {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg); }
+  80% {
+    -webkit-transform: rotate(12deg);
+    -moz-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    -o-transform: rotate(12deg);
+    transform: rotate(12deg); } }
 
 #tech {
   padding-top: 2em;
@@ -623,37 +699,6 @@ html {
 
 #music {
   background-color: dodgerblue; }
-  #music .bandcamp-widget {
-    width: 400px;
-    height: 520px;
-    background-color: goldenrod;
-    border-radius: 20px;
-    padding: 25px; }
-  #music .accordion-tabs {
-    padding: 0; }
-    #music .accordion-tabs::after {
-      clear: both;
-      content: "";
-      display: table; }
-    #music .accordion-tabs .tab-header-and-content {
-      list-style: none; }
-      @media screen and (min-width: 50em) {
-        #music .accordion-tabs .tab-header-and-content {
-          display: inline; } }
-    #music .accordion-tabs .tab-link {
-      display: block;
-      padding-right: 1em; }
-      @media screen and (min-width: 50em) {
-        #music .accordion-tabs .tab-link {
-          display: inline-block; } }
-    #music .accordion-tabs .is-active {
-      color: #ff0000; }
-    #music .accordion-tabs .tab-content {
-      display: none;
-      width: 100%; }
-      @media screen and (min-width: 50em) {
-        #music .accordion-tabs .tab-content {
-          float: left; } }
 
 #design {
   background-color: darkblue;
@@ -669,31 +714,3 @@ html {
   background-color: darkblue;
   background-image: -webkit-linear-gradient(darkblue, black);
   background-image: linear-gradient(darkblue, black); }
-
-.audio-container {
-  display: block; }
-
-.audioplayer {
-  position: relative;
-  width: 10em; }
-  .audioplayer * {
-    display: inline-block; }
-  .audioplayer .timeline-container {
-    position: relative;
-    width: 4em;
-    height: 1em; }
-  .audioplayer .timeline {
-    width: 110%;
-    height: .2em;
-    border-radius: .1em;
-    vertical-align: middle;
-    background-color: darkgray; }
-  .audioplayer .playhead {
-    position: absolute;
-    height: .7em;
-    width: .2em;
-    border-radius: .1em;
-    top: .2em;
-    left: 1%;
-    background-color: goldenrod;
-    vertical-align: top; }
