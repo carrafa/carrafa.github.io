@@ -4,7 +4,6 @@ $(function() {
   hookListener();
   batmanify($('.profile-pic'), '../images/josh.png', '-50%');
   fishTimer();
-  startFishKiller();
 });
 
 // ------------- fish colors -------------
@@ -24,74 +23,31 @@ function getColor() {
 
 // ------------- fish makers -------------
 
-function makeAFishRtoL() {
+function makeAFish(start, end) {
   $body = $('<div>').addClass('body');
-  $eye = $('<div>').addClass('eyeRtoL');
-  $tail = $('<div>').addClass('tailRtoL');
-  $fishContainer = $('<div>').addClass('fish-container right-to-left');
+  $eye = $('<div>').addClass('eye-' + start + "-to-" + end);
+  $tail = $('<div>').addClass('tail-' + start + "-to-" + end);
+  $fishContainer = $('<div>').addClass('fish-container ' + start + "-to-" +
+    end);
 
   var oceanDepth = $(document).height() - $('#tech').height();
   var topOffset = Math.floor(Math.random() * oceanDepth);
-
   var color = getColor();
 
-  $body.css({
-    'background-color': color
-  });
-
-
-  $tail.css({
-    "border-right": "1.5em solid " + color
-  });
-
+  $body.css('background-color', color);
+  $tail.css("border-" + start + "-color", color);
   $fishContainer.css({
     top: topOffset + "px"
   });
 
-  setTimeout(function() {
+  // console.log($fishContainer);
+  setTimeout(function($fishContainer) {
     hookDepth = Math.floor(hookDepth);
-    if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
-      $fishContainer.css('display', 'none');
+    if ((hookDepth < topOffset - 0) && (hookDepth > topOffset - 100)) {
+      // console.log($fishContainer);
       makeAFishCaught(color);
+      fishCounter++;
     }
-  }, 1000);
-
-  $body.append($eye);
-  $fishContainer.append($body);
-  $fishContainer.append($tail);
-  $('.acquarium').append($fishContainer);
-};
-
-function makeAFishLtoR() {
-  $body = $('<div>').addClass('body');
-  $eye = $('<div>').addClass('eyeLtoR');
-  $tail = $('<div>').addClass('tailLtoR');
-  $fishContainer = $('<div>').addClass('fish-container left-to-right');
-
-  var oceanDepth = $(document).height() - $('#tech').height()
-  var topOffset = Math.floor(Math.random() * oceanDepth);
-
-
-  var color = getColor();
-
-  $body.css({
-    'background-color': color
-  });
-
-  $tail.css({
-    "border-left": "1.5em solid " + color
-  });
-
-  $fishContainer.css({
-    top: topOffset + "px"
-  });
-
-  setTimeout(function() {
-    hookDepth = Math.floor(hookDepth);
-    if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
-      $fishContainer.remove();
-      makeAFishCaught(color);
-    } else {}
   }, 1000);
 
   $body.append($eye);
@@ -105,46 +61,30 @@ function makeAFishCaught(color) {
   $eye = $('<div>').addClass('eyeCaught');
   $tail = $('<div>').addClass('tailCaught');
   $fishContainer = $('<div>').addClass('fish-container fish-caught');
-
-  $body.css({
-    'background-color': color
-  });
-
-  $tail.css({
-    "border-bottom": "1.5em solid " + color
-  });
+  $body.css('background-color', color);
+  $tail.css("border-bottom", "1.5em solid " + color);
 
   $body.append($eye);
   $fishContainer.append($body);
   $fishContainer.append($tail);
   $('.hook').append($fishContainer);
-  fishCounter++;
   $('.fish-counter').text(fishCounter);
-};
+}
 
-// fish top range: -19em to 165em
-
-// ------------- fish timers -------------
+// ------------- fish timer -------------
 
 function fishTimer() {
+  var fishDelay = 0;
   window.setInterval(function() {
-    makeAFishRtoL();
-    makeAFishLtoR();
+    if (fishDelay > 10) {
+      $('.acquarium').children().first().remove();
+      $('.acquarium').children().first().remove();
+    }
+    makeAFish('right', 'left');
+    makeAFish('left', 'right');
+    fishDelay++;
   }, 500);
 }
-
-function startFishKiller() {
-  window.setTimeout(function() {
-    fishKiller();
-  }, 5000);
-}
-
-function fishKiller() {
-  window.setInterval(function() {
-    $('.acquarium').children().first().remove();
-  }, 250);
-}
-
 
 // ------------- batmanify logo -------------
 
@@ -161,7 +101,7 @@ function batmanify(el, image, offset) {
 
 function hookListener() {
   $(window).scroll(function() {
-    var oceanDepth = $(document).height() - $('#tech').height()
+    var oceanDepth = $(document).height() - $('#tech').height();
     var scrollTop = $(window).scrollTop() - 1000;
     var docHeight = $(document).height();
     var offsetPercentage = (scrollTop * 1.3) / docHeight;

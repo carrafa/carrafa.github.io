@@ -20,7 +20,7 @@ html {
     border-radius: 50%;
     background-color: orange;
     box-shadow: inset -2px -4px 5px black; }
-    .fish-container .body .eyeRtoL {
+    .fish-container .body .eye-right-to-left {
       position: absolute;
       border-radius: 50%;
       top: 1em;
@@ -28,7 +28,7 @@ html {
       height: .4em;
       width: .4em;
       background-color: #000064; }
-    .fish-container .body .eyeLtoR {
+    .fish-container .body .eye-left-to-right {
       position: absolute;
       border-radius: 50%;
       top: 1em;
@@ -44,20 +44,32 @@ html {
       height: .4em;
       width: .4em;
       background-color: #000064; }
-  .fish-container .tailRtoL {
+  .fish-container .tail-right-to-left {
     position: absolute;
     right: -1em;
     top: 0;
-    border-top: 1.5em solid transparent;
-    border-right: 1.5em solid orange;
-    border-bottom: 1.5em solid transparent; }
-  .fish-container .tailLtoR {
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 1.5em;
+    border-right-width: 1.5em;
+    border-bottom-width: 1.5em;
+    border-top-color: transparent;
+    border-right-color: orange;
+    border-bottom-color: transparent; }
+  .fish-container .tail-left-to-right {
     position: absolute;
     left: -1.2em;
     top: 0;
-    border-top: 1.5em solid transparent;
-    border-left: 1.5em solid orange;
-    border-bottom: 1.5em solid transparent; }
+    border-top-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 1.5em;
+    border-left-width: 1.5em;
+    border-bottom-width: 1.5em;
+    border-top-color: transparent;
+    border-left-color: orange;
+    border-bottom-color: transparent; }
   .fish-container .tailCaught {
     position: absolute;
     left: 0;
