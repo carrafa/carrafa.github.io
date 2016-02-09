@@ -141,3 +141,20 @@
   }
   @include animation(caught 2.0s linear 5);
 }
+
+@include keyframes(vanish){
+  1%{
+    display: none;
+  }
+  100%{
+    display: none;
+  }
+}
+
+.vanish{
+  @include animation(vanish 2.0s linear);
+}
+
+.paused{
+  @include animation-play-state(paused);
+}

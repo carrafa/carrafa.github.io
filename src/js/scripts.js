@@ -40,14 +40,8 @@ function makeAFish(start, end) {
     top: topOffset + "px"
   });
 
-  // console.log($fishContainer);
-  setTimeout(function($fishContainer) {
-    hookDepth = Math.floor(hookDepth);
-    if ((hookDepth < topOffset - 0) && (hookDepth > topOffset - 100)) {
-      // console.log($fishContainer);
-      makeAFishCaught(color);
-      fishCounter++;
-    }
+  setTimeout(function() {
+    fishCatcher($fishContainer, topOffset, color);
   }, 1000);
 
   $body.append($eye);
@@ -72,6 +66,15 @@ function makeAFishCaught(color) {
 }
 
 // ------------- fish timer -------------
+
+function fishCatcher(fishContainer, topOffset, color) {
+  hookDepth = Math.floor(hookDepth);
+  if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
+    fishCounter++;
+    makeAFishCaught(color);
+    fishContainer.fadeOut(100);
+  }
+}
 
 function fishTimer() {
   var fishDelay = 0;

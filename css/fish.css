@@ -204,3 +204,31 @@ html {
     -ms-transform: rotate(12deg);
     -o-transform: rotate(12deg);
     transform: rotate(12deg); } }
+
+@-webkit-keyframes vanish {
+  1% {
+    display: none; }
+  100% {
+    display: none; } }
+
+@-moz-keyframes vanish {
+  1% {
+    display: none; }
+  100% {
+    display: none; } }
+
+@keyframes vanish {
+  1% {
+    display: none; }
+  100% {
+    display: none; } }
+
+.vanish {
+  -webkit-animation: vanish 2s linear;
+  -moz-animation: vanish 2s linear;
+  animation: vanish 2s linear; }
+
+.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused; }
