@@ -33,16 +33,29 @@ function makeAFish(start, end) {
   var oceanDepth = $(document).height() - $('#tech').height();
   var topOffset = Math.floor(Math.random() * oceanDepth);
   var color = getColor();
+  var animationFirst = {};
+  animationFirst[start] = '20%';
+  var animationSecond = {};
+  animationSecond[start] = '50%';
+  var animationThird = {};
+  animationThird[start] = '80%';
+  var animationFourth = {};
+  animationFourth[start] = '200%';
 
   $body.css('background-color', color);
   $tail.css("border-" + start + "-color", color);
   $fishContainer.css({
     top: topOffset + "px"
   });
+  $fishContainer.animate(animationFirst, 1000);
+  $fishContainer.animate(animationSecond, 500, 'linear');
+  $fishContainer.animate(animationThird, 500, 'linear');
+  $fishContainer.animate(animationFourth, 1000);
+
 
   setTimeout(function() {
     fishCatcher($fishContainer, topOffset, color);
-  }, 1000);
+  }, 1500);
 
   $body.append($eye);
   $fishContainer.append($body);
@@ -68,12 +81,13 @@ function makeAFishCaught(color) {
 // ------------- fish timer -------------
 
 function fishCatcher(fishContainer, topOffset, color) {
+
   hookDepth = Math.floor(hookDepth);
   if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
     fishCounter++;
     makeAFishCaught(color);
-    fishContainer.fadeOut(100);
   }
+
 }
 
 function fishTimer() {
