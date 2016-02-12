@@ -54,7 +54,7 @@ function makeAFish(start, end) {
 
 
   setTimeout(function() {
-    fishCatcher($fishContainer, topOffset, color)
+    fishCatcher($fishContainer, topOffset, color);
   }, 1500);
 
   $body.append($eye);

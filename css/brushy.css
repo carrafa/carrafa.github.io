@@ -1,0 +1,111 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+body {
+  background-color: powderblue;
+  min-width: 950px;
+  cursor: none;
+  font-family: 'Raleway', sans-serif; }
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  margin: 0; }
+
+.container {
+  margin-top: 3em;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.toothbrush-container {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  z-index: 1;
+  width: 1000em;
+  height: 3em; }
+  .toothbrush-container .bristles {
+    height: 100%;
+    width: 6em;
+    padding: 0;
+    margin: 0 0 0 1em; }
+    .toothbrush-container .bristles li {
+      position: relative;
+      height: 100%;
+      width: .4em;
+      display: inline-block;
+      background: snow; }
+  .toothbrush-container .brush {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    border-radius: 3em;
+    background: firebrick; }
+
+.mouth {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  margin-top: 5em;
+  background-color: salmon;
+  height: 10em;
+  border-radius: 3em; }
+  .mouth .top-row {
+    text-align: center;
+    height: 7em; }
+  .mouth .bottom-row {
+    text-align: center;
+    height: 3em; }
+  .mouth .tooth {
+    position: relative;
+    height: 3em;
+    width: 5%;
+    background-color: black;
+    display: inline-block;
+    margin-left: .5%; }
+  .mouth .tooth:first-child {
+    margin-left: 0; }
+  .mouth .bottom-row .tooth {
+    bottom: 0; }
+
+.eyebrow-container {
+  display: inline-block;
+  width: 100%;
+  height: 2em; }
+
+.eyebrow {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  width: 15em;
+  background-color: sienna;
+  margin-left: 18%;
+  margin-bottom: 1em;
+  top: 10%;
+  border-radius: 1em; }
+
+.eye {
+  display: inline-block;
+  height: 15em;
+  width: 15em;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 18%; }
+
+.pupil {
+  position: relative;
+  background: black;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  top: 70%;
+  left: 11%; }
