@@ -5,13 +5,11 @@
 }
 
 body{
-  // @include linear-gradient($light-blue, black);
   background-color: black;
   font-size: 2em;
   font-family: $main-font;
   font-weight: 600;
   color: $font-color;
-  // height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   @include media($mobile){
@@ -34,6 +32,10 @@ body{
       text-align: center;
     }
   }
+}
+
+summary{
+  color: $font-color;
 }
 
 
@@ -59,6 +61,10 @@ h1, h2, h3, h4, h5, h6{
   color: $dark-yellow;
   margin: 0;
   font-weight: bold;
+}
+
+h3{
+  color: $red;
 }
 
 ul{
@@ -104,6 +110,8 @@ li{
 }
 
 .right-container{
+  position: relative;
+  z-index: 150;
   display: inline-block;
   vertical-align: top;
   text-align: right;
@@ -112,13 +120,6 @@ li{
   @include media($mobile){
     width: 90%;
   }
-}
-
-.bio{
-  position: relative;
-  z-index: 150;
-  color: $light-blue;
-  font-weight: 300;
 }
 
 // -------------- header! -------------- //
@@ -352,18 +353,35 @@ footer.mobile{
   width: 100vw;
 }
 
-// -------------------------------- bio summary stuff -------------------------------- //
+// -------------------------------- bio stuff -------------------------------- //
+
+#bio{
+
+  // mix-blend-mode: color-burn;
+}
+
+.bio{
+  position: relative;
+  font-weight: 300;
+  color: $light-blue;
+}
+
+.technologies-header{
+  color: $dark-yellow;
+  @include animation(ship 7.0s ease);
+}
+
 .bio-summary {
+  background-color: transparent;
   position: relative;
   width: 50%;
   margin-left: 50%;
   margin-top: 1em;
-  z-index: 1001;
   h6{
     position: relative;
     margin-top: .5em;
     margin-bottom: .5em;
-    @include animation(ship 12.0s ease)
+    @include animation(ship 12.0s ease);
   }
   .technologies-container{
     position: relative;
@@ -371,12 +389,11 @@ footer.mobile{
     display: block;
     *{
       display: block;
-      // width: 10em;
     }
     .technologies{
       text-align: right;
-      color: $light-blue;
       font-weight: 300;
+      color: $light-blue;
     }
   }
   .fish-counter-container {
@@ -388,8 +405,8 @@ footer.mobile{
     }
     .fish-counter{
       display: block;
-      color: $light-blue;
       font-weight: 300;
+      color: $light-blue;
     }
   }
 }
@@ -399,9 +416,6 @@ footer.mobile{
 
 // -------------------------------- project lists -------------------------------- //
 
-.projects-header{
-  color: firebrick;
-}
 .projects{
   padding-top: .5em;
   summary{
@@ -487,10 +501,6 @@ footer.mobile{
     width: 100%;
     vertical-align: top;
   }
-  .technologies-header{
-    @include animation(ship 7.0s ease);
-  }
-
   .ship-container{
     position: absolute;
     margin-top: -16em;

@@ -104,7 +104,7 @@ function fishTimer() {
       var topOffset = top.substring(0, top.length - 2);
       if (fishCatcher(topOffset)) {
         $fish.stop(true, true).animate({
-          left: '10000px'
+          opacity: '0'
         }, 10);
 
         makeAFishCaught(color);
@@ -150,7 +150,7 @@ $('#email').click(function(e) {
   this.href = this.href
     .replace(/joshua/, '')
     .replace(/samazingemailaddressat/, '@')
-    .replace(/dot/, '.')
+    .replace(/dot/, '.');
   console.log(this.href);
 });
 

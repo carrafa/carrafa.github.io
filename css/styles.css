@@ -31,6 +31,9 @@ body {
       body h3 {
         text-align: center; } }
 
+summary {
+  color: cornsilk; }
+
 .hook {
   position: absolute;
   z-index: 900;
@@ -63,6 +66,9 @@ h1, h2, h3, h4, h5, h6 {
   color: goldenrod;
   margin: 0;
   font-weight: bold; }
+
+h3 {
+  color: firebrick; }
 
 ul {
   list-style: none;
@@ -104,6 +110,8 @@ i:hover {
       width: 90%; } }
 
 .right-container {
+  position: relative;
+  z-index: 150;
   display: inline-block;
   vertical-align: top;
   text-align: right;
@@ -112,12 +120,6 @@ i:hover {
   @media screen and (max-width: 650px) {
     .right-container {
       width: 90%; } }
-
-.bio {
-  position: relative;
-  z-index: 150;
-  color: deepskyblue;
-  font-weight: 300; }
 
 header {
   position: fixed;
@@ -327,12 +329,23 @@ footer.mobile {
   height: 150vh;
   width: 100vw; }
 
+.bio {
+  position: relative;
+  font-weight: 300;
+  color: deepskyblue; }
+
+.technologies-header {
+  color: goldenrod;
+  -webkit-animation: ship 7s ease;
+  -moz-animation: ship 7s ease;
+  animation: ship 7s ease; }
+
 .bio-summary {
+  background-color: transparent;
   position: relative;
   width: 50%;
   margin-left: 50%;
-  margin-top: 1em;
-  z-index: 1001; }
+  margin-top: 1em; }
   .bio-summary h6 {
     position: relative;
     margin-top: .5em;
@@ -348,8 +361,8 @@ footer.mobile {
       display: block; }
     .bio-summary .technologies-container .technologies {
       text-align: right;
-      color: deepskyblue;
-      font-weight: 300; }
+      font-weight: 300;
+      color: deepskyblue; }
   .bio-summary .fish-counter-container {
     position: relative;
     right: 0;
@@ -358,11 +371,8 @@ footer.mobile {
       display: inline-block; }
     .bio-summary .fish-counter-container .fish-counter {
       display: block;
-      color: deepskyblue;
-      font-weight: 300; }
-
-.projects-header {
-  color: firebrick; }
+      font-weight: 300;
+      color: deepskyblue; }
 
 .projects {
   padding-top: .5em; }
@@ -632,10 +642,6 @@ html {
     display: inline-block;
     width: 100%;
     vertical-align: top; }
-  #tech .technologies-header {
-    -webkit-animation: ship 7s ease;
-    -moz-animation: ship 7s ease;
-    animation: ship 7s ease; }
   #tech .ship-container {
     position: absolute;
     margin-top: -16em;
