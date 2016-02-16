@@ -10,7 +10,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   color: cornsilk;
-  height: 100vh;
   width: 100vw;
   overflow-x: hidden; }
   @media screen and (max-width: 650px) {
@@ -601,6 +600,7 @@ html {
 
 #tech {
   padding-top: 2em;
+  height: 37em;
   background-color: deepskyblue; }
   #tech h3 {
     position: relative;

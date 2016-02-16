@@ -7,7 +7,7 @@ body{
   font-family: $main-font;
   font-weight: 600;
   color: $font-color;
-  height: 100vh;
+  // height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   @include media($mobile){
@@ -454,6 +454,7 @@ footer.mobile{
 
 #tech {
   padding-top: 2em;
+  height: 37em;
   background-color: $light-blue;
   h3{
     position: relative;

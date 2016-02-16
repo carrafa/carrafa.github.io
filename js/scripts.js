@@ -15,6 +15,7 @@ var fishColors = ['coral', 'aquamarine', 'violet', 'hotpink', 'crimson',
 ];
 
 var hookDepth = -100;
+var fishInterval = 0;
 var fishCounter = 0;
 
 function getColor() {
@@ -28,7 +29,7 @@ function makeAFish(start, end) {
   $eye = $('<div>').addClass('eye-' + start + "-to-" + end);
   $tail = $('<div>').addClass('tail-' + start + "-to-" + end);
   $fishContainer = $('<div>').addClass('fish-container ' + start + "-to-" +
-    end);
+    end).attr('id', 'fish-' + fishInterval);
 
   var oceanDepth = $(document).height() - $('#tech').height();
   var topOffset = Math.floor(Math.random() * oceanDepth);
@@ -51,11 +52,6 @@ function makeAFish(start, end) {
   $fishContainer.animate(animationSecond, 500, 'linear');
   $fishContainer.animate(animationThird, 500, 'linear');
   $fishContainer.animate(animationFourth, 1000);
-
-
-  setTimeout(function() {
-    fishCatcher($fishContainer, topOffset, color);
-  }, 1500);
 
   $body.append($eye);
   $fishContainer.append($body);
@@ -80,26 +76,42 @@ function makeAFishCaught(color) {
 
 // ------------- fish timer -------------
 
-function fishCatcher(fishContainer, topOffset, color) {
-
+function fishCatcher(topOffset) {
   hookDepth = Math.floor(hookDepth);
-  if ((hookDepth < topOffset - 20) && (hookDepth > topOffset - 60)) {
+  if ((hookDepth < topOffset - 0) && (hookDepth > topOffset - 50)) {
     fishCounter++;
-    makeAFishCaught(color);
+    return true;
+  } else {
+    return false;
   }
 
 }
 
 function fishTimer() {
-  var fishDelay = 0;
   window.setInterval(function() {
-    if (fishDelay > 10) {
-      $('.acquarium').children().first().remove();
+    if (fishInterval % 2 === 0) {
+      makeAFish('right', 'left');
+    }
+    if (fishInterval % 2 !== 0) {
+      makeAFish('left', 'right');
+    }
+    if (fishInterval > 10) {
+
+      fishId = fishInterval - 3;
+      var $fish = $('#fish-' + fishId);
+      var top = $fish.css('top');
+      var color = $fish.find('.body').css('background-color');
+      var topOffset = top.substring(0, top.length - 2);
+      if (fishCatcher(topOffset)) {
+        $fish.stop(true, true).animate({
+          left: '10000px'
+        }, 10);
+
+        makeAFishCaught(color);
+      }
       $('.acquarium').children().first().remove();
     }
-    makeAFish('right', 'left');
-    makeAFish('left', 'right');
-    fishDelay++;
+    fishInterval++;
   }, 500);
 }
 
@@ -109,7 +121,7 @@ function batmanify(el, image, offset) {
   el.batmanify({
     imageSource: image,
     topOffset: offset,
-    link: 'http://carrafa.github.io'
+    link: 'http://joshua.carrafa.com'
   });
 }
 
