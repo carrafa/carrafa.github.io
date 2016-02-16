@@ -120,6 +120,8 @@ i:hover {
   @media screen and (max-width: 650px) {
     .right-container {
       width: 90%; } }
+  .right-container summary {
+    margin-right: 1em; }
 
 header {
   position: fixed;

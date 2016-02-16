@@ -120,6 +120,9 @@ li{
   @include media($mobile){
     width: 90%;
   }
+  summary{
+    margin-right: 1em;
+  }
 }
 
 // -------------- header! -------------- //
