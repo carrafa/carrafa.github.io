@@ -143,6 +143,16 @@ function hookListener() {
   });
 }
 
+// ------------- email address --------------
+
+
+$('#email').click(function(e) {
+  this.href = this.href
+    .replace(/joshua/, '')
+    .replace(/samazingemailaddressat/, '@')
+    .replace(/dot/, '.')
+  console.log(this.href);
+});
 
 // ------------- scroll nav thing --------------
 
