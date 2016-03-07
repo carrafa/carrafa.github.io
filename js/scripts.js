@@ -151,7 +151,6 @@ $('#email').click(function(e) {
     .replace(/joshua/, '')
     .replace(/samazingemailaddressat/, '@')
     .replace(/dot/, '.');
-  console.log(this.href);
 });
 
 // ------------- scroll nav thing --------------

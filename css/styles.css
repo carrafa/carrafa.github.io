@@ -258,10 +258,6 @@ header {
     .scroll-on-page article:last-child {
       margin-right: 0; } }
 
-@media screen and (max-width: 1065px) {
-  header.web {
-    font-size: 0.7em; } }
-
 @media screen and (max-width: 650px) {
   header.web {
     display: none; } }
@@ -330,12 +326,6 @@ footer.mobile {
   @media screen and (max-width: 650px) {
     .main-container {
       padding-top: 1.3em; } }
-  @media screen and (max-width: 1065px) {
-    .main-container {
-      font-size: .7em; } }
-  @media screen and (max-width: 900px) {
-    .main-container {
-      font-size: .5em; } }
 
 .container {
   display: block;
@@ -647,12 +637,6 @@ html {
   padding-top: 2em;
   height: 37em;
   background-color: deepskyblue; }
-  @media screen and (max-width: 1065px) {
-    #tech {
-      padding-top: 3em; } }
-  @media screen and (max-width: 900px) {
-    #tech {
-      padding-top: 5em; } }
   #tech h3 {
     position: relative;
     z-index: 1100; }
@@ -696,6 +680,12 @@ html {
       width: 0;
       border-top: 2em solid darkred;
       border-left: 2em solid transparent; }
+      @media screen and (max-width: 1065px) {
+        #tech .ship-container .tip-of-ship {
+          left: -1.95em; } }
+      @media screen and (max-width: 900px) {
+        #tech .ship-container .tip-of-ship {
+          left: -2em; } }
     #tech .ship-container .top-of-ship {
       height: 2em;
       width: 100%;

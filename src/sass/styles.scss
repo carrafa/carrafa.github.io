@@ -265,7 +265,6 @@ header{
 // -------------------------- web/mobile -------------------------- //
 
 header.web{
-  @include media($tablet){font-size:0.7em}
   @include media($mobile){
     display: none;
   }
@@ -349,12 +348,6 @@ footer.mobile{
   padding-top: 2.3em;
   @include media($mobile){
     padding-top: 1.3em;
-  }
-  @include media($tablet){
-    font-size: .7em;
-  }
-  @include media($phablet){
-    font-size: .5em;
   }
 
 }
@@ -503,8 +496,6 @@ footer.mobile{
   padding-top: 2em;
   height: 37em;
   background-color: $light-blue;
-  @include media($tablet){padding-top:3em;}
-  @include media($phablet){padding-top:5em;}
   h3{
     position: relative;
     z-index: 1100;
@@ -534,6 +525,8 @@ footer.mobile{
       position: absolute;
       top: 0;
       left: -2em;
+      @include media($tablet){left:-1.95em}
+      @include media($phablet){left:-2em}
       @include triangle(2em, $dark-red, up-right);
     }
     .top-of-ship{
