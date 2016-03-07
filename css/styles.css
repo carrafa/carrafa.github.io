@@ -291,6 +291,7 @@ header.mobile {
     .subheader.mobile {
       display: block;
       margin: 0;
+      padding-top: 2em;
       font-size: .5em;
       text-align: center; }
       .subheader.mobile p {
@@ -325,6 +326,12 @@ footer.mobile {
   @media screen and (max-width: 650px) {
     .main-container {
       padding-top: 1.3em; } }
+  @media screen and (max-width: 1065px) {
+    .main-container {
+      font-size: .7em; } }
+  @media screen and (max-width: 800px) {
+    .main-container {
+      font-size: .5em; } }
 
 .container {
   display: block;
@@ -636,6 +643,12 @@ html {
   padding-top: 2em;
   height: 37em;
   background-color: deepskyblue; }
+  @media screen and (max-width: 1065px) {
+    #tech {
+      padding-top: 3em; } }
+  @media screen and (max-width: 800px) {
+    #tech {
+      padding-top: 5em; } }
   #tech h3 {
     position: relative;
     z-index: 1100; }
@@ -646,7 +659,7 @@ html {
     vertical-align: top; }
   #tech .ship-container {
     position: absolute;
-    margin-top: -16em;
+    margin-top: -21em;
     margin-left: 40%;
     width: 100%;
     z-index: 110;
@@ -730,6 +743,7 @@ html {
 
 #ocean {
   height: 400vh;
+  max-height: 400vh;
   background-color: darkblue;
   background-image: -webkit-linear-gradient(darkblue, black);
   background-image: linear-gradient(darkblue, black); }

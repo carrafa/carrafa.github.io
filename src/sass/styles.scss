@@ -302,6 +302,7 @@ header.mobile{
   @include media($mobile){
     display: block;
     margin: 0;
+    padding-top: 2em;
     font-size: .5em;
     text-align: center;
     p{
@@ -348,6 +349,13 @@ footer.mobile{
   @include media($mobile){
     padding-top: 1.3em;
   }
+  @include media($tablet){
+    font-size: .7em;
+  }
+  @include media($phablet){
+    font-size: .5em;
+  }
+
 }
 
 .container{
@@ -494,6 +502,8 @@ footer.mobile{
   padding-top: 2em;
   height: 37em;
   background-color: $light-blue;
+  @include media($tablet){padding-top:3em;}
+  @include media($phablet){padding-top:5em;}
   h3{
     position: relative;
     z-index: 1100;
@@ -506,7 +516,7 @@ footer.mobile{
   }
   .ship-container{
     position: absolute;
-    margin-top: -16em;
+    margin-top: -21em;
     margin-left: 40%;
     width: 100%;
     z-index: 110;
@@ -592,5 +602,6 @@ footer.mobile{
 
 #ocean{
   height: 400vh;
+  max-height: 400vh;
   @include linear-gradient($dark-blue, black);
 }
