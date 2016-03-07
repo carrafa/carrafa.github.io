@@ -258,6 +258,10 @@ header {
     .scroll-on-page article:last-child {
       margin-right: 0; } }
 
+@media screen and (max-width: 1065px) {
+  header.web {
+    font-size: 0.7em; } }
+
 @media screen and (max-width: 650px) {
   header.web {
     display: none; } }
@@ -329,7 +333,7 @@ footer.mobile {
   @media screen and (max-width: 1065px) {
     .main-container {
       font-size: .7em; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     .main-container {
       font-size: .5em; } }
 
@@ -646,7 +650,7 @@ html {
   @media screen and (max-width: 1065px) {
     #tech {
       padding-top: 3em; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     #tech {
       padding-top: 5em; } }
   #tech h3 {

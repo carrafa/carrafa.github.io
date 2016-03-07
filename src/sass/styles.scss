@@ -265,6 +265,7 @@ header{
 // -------------------------- web/mobile -------------------------- //
 
 header.web{
+  @include media($tablet){font-size:0.7em}
   @include media($mobile){
     display: none;
   }
